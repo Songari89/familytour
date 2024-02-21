@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import './util/Constants.css';
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -11,6 +12,7 @@ import TodoList from "./pages/TodoList";
 import Photo from "./pages/Photo";
 import Upload from "./pages/Upload";
 import Places from "./pages/Places";
+import UploadPlace from "./pages/UploadPlace";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,7 @@ const router = createBrowserRouter([
       { path: "/photo", element: <Photo /> },
       { path: "/upload", element: <Upload /> },
       { path: "/places", element: <Places /> },
+      { path: "/uploadplace", element: <UploadPlace /> },
     ],
   },
 ]);

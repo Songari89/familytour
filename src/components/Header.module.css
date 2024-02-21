@@ -1,0 +1,62 @@
+.headcontainer {
+  width: 60vw;
+  height: 17vh;
+  margin: 1.5rem auto 0 auto;
+  font-size: 1.5rem;
+  position:relative;
+}
+
+.jianicon{
+  height: 100%;
+  position:absolute;
+  top:0;
+  left:0;
+  animation: rotate 1s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes rotate{
+  0%{
+    transform: rotate(8deg)
+  }
+  50%{
+    transform: rotate(-5deg)
+  }
+  100%{
+    transform: rotate(8deg)
+  }
+}
+
+.navcontainer {
+  width: 85%;
+  position: absolute;
+  bottom:0;
+  right:0;
+}
+
+.headtext{
+  font-family: 'KCC-Ganpan','Kyobo Handwriting 2019', sans-serif;
+  color: var(--mainYeColor);
+  text-align: right;
+  margin-right: 0.5rem; 
+}
+
+.jian{
+  color: #ffffff;
+  font-size: 1.7rem;
+}
+
+.nav{
+  width:100%;
+  background-color: var(--mainYeColor);
+}
+
+@media (max-width: 768px){
+  .headcontainer{
+    width: 90vw;
+    font-size:1.4rem;
+  }
+  .jian{
+    font-size: 1.6rem;
+  }
+}

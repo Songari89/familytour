@@ -1,0 +1,46 @@
+*{
+  box-sizing: border-box;
+}
+
+:root{
+  /* 색상 차트 */
+  --mainYeColor: #ffc33e;
+  --mainOrColor: #db6538;
+  --mainFgColor: #185146;
+  --pageColor: #f6f3f0;
+  --fontColor: #1e1e1e;
+}
+
+/* 폰트 설정 */
+@font-face{
+  font-family: 'KCC-Ganpan', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  scr: url(../fonts/KCC-Ganpan.ttf) format("truetype");
+}
+
+@font-face{
+  font-family: 'KCC-Ganpan', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  scr: url(../fonts/KCC-Ganpan.otf) format("opentype");
+}
+
+@font-face{
+  font-family: 'Kyobo Handwriting 2019', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  scr: url(../fonts/Kyobo Handwriting 2019.ttf) format("truetype");
+}
+
+@font-face{
+  font-family: 'Kyobo Handwriting 2019', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  scr: url(../fonts/Kyobo Handwriting 2019.otf) format("opentype");
+}
+
+p{
+  padding: 0;
+  margin: 0;
+}

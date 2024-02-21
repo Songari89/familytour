@@ -1,0 +1,22 @@
+.background {
+  width: 100%;
+  height: 100%;
+  background-color: var(--mainFgColor);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.backgroundmobile {
+  background-color: var(--mainOrColor);
+}
+
+.pageimage {
+  width: 95vw;
+  height: 75vh;
+  position: fixed;
+  bottom: 1rem;
+  left: 40%;
+  transform: translateX(-40%);
+}
