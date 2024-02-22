@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import './util/Constants.css';
+import "./util/Constants.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -13,6 +13,7 @@ import Photo from "./pages/Photo";
 import Upload from "./pages/Upload";
 import Places from "./pages/Places";
 import UploadPlace from "./pages/UploadPlace";
+import Selected from "./pages/Selected";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       { index: true, element: <Select /> },
+      { path: "/selected", element: <Selected /> },
       { path: "/notice", element: <Notice /> },
       { path: "/todolist", element: <TodoList /> },
       { path: "/photo", element: <Photo /> },

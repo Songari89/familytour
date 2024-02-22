@@ -1,62 +1,134 @@
 .headcontainer {
   width: 60vw;
   height: 17vh;
-  margin: 1.5rem auto 0 auto;
-  font-size: 1.5rem;
-  position:relative;
+  margin: 2.5rem auto 0 auto;
+  position: relative;
 }
 
-.jianicon{
+.mobileheadcontainer{
+  width: 90vw;
+}
+
+.jianicon {
   height: 100%;
-  position:absolute;
-  top:0;
-  left:0;
+  position: absolute;
+  top: 0;
+  left: 0;
   animation: rotate 1s ease-in-out infinite;
   z-index: 1;
+  cursor: pointer;
+
 }
 
-@keyframes rotate{
-  0%{
-    transform: rotate(8deg)
+.jianicon:hover {
+  height: 110%;
+  top: -5px;
+  left:-5px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(8deg);
   }
-  50%{
-    transform: rotate(-5deg)
+  50% {
+    transform: rotate(-5deg);
   }
-  100%{
-    transform: rotate(8deg)
+  100% {
+    transform:  rotate(8deg);
   }
 }
+
 
 .navcontainer {
-  width: 85%;
+  width: 92%;
   position: absolute;
-  bottom:0;
-  right:0;
+  bottom: 0.5rem;
+  right: 0;
 }
 
-.headtext{
-  font-family: 'KCC-Ganpan','Kyobo Handwriting 2019', sans-serif;
+.headtext {
+  font-family: "KCC-Ganpan", "Kyobo Handwriting 2019", sans-serif;
   color: var(--mainYeColor);
   text-align: right;
-  margin-right: 0.5rem; 
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
 }
 
-.jian{
+.jian {
   color: #ffffff;
   font-size: 1.7rem;
 }
 
-.nav{
-  width:100%;
+.nav {
+  width: 100%;
   background-color: var(--mainYeColor);
+  padding: 0.5rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 2px 0.5px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 768px){
-  .headcontainer{
+.nav > a {
+  color: var(--navColor);
+  margin: 0 0.5rem;
+  font-size: 1.3rem;
+}
+.nav > span {
+  color: var(--navColor);
+}
+
+
+@media (max-width: 768px) {
+  .headcontainer {
     width: 90vw;
-    font-size:1.4rem;
   }
-  .jian{
+  .headtext {
+    font-size: 1.4rem;
+  }
+
+  .jian {
     font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .headtext {
+    font-size: 1.2rem;
+  }
+  .jian {
+    font-size: 1.4rem;
+  }
+  .navcontainer {
+    width: 90%;
+  }
+  .nav {
+    padding-left: 3rem;
+  }
+  .nav > a {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .headtext {
+    font-size: 2.2rem;
+  }
+  .jian {
+    font-size: 2.4rem;
+  }
+  .nav > a {
+    margin: 0 0.7rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-height: 850px) {
+  .headcontainer {
+    margin: 1.5rem auto 0 auto;
+  }
+}
+
+@media (min-height: 1024px) {
+  .headcontainer {
+    margin: 3.5rem auto 0 auto;
   }
 }

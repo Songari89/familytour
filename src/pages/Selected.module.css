@@ -1,0 +1,12 @@
+.container{
+  width: 90%;
+  height: 90%;
+  padding: 1rem 1rem 0 1rem;
+  background-color: var(--selectBgColor);
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  border-radius: 0.5rem;
+  overflow: auto;
+}

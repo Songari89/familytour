@@ -1,0 +1,102 @@
+.container{
+  width: 90%;
+  height: 90%;
+  padding: 1rem 1rem 0 1rem;
+  background-color: var(--selectBgColor);
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  border-radius: 0.5rem;
+  overflow: auto;
+}
+
+
+
+.titlecontainer{
+  height:10%;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+.title{
+  font-size: 2rem;
+}
+.contentscontainer{
+  display: flex;
+  width:100%;
+  height:90%;
+}
+.mobilecontents{
+  display: block;
+}
+
+.idcontainer{
+  width:50%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:1rem;
+  place-items: center;
+  
+}
+
+.jiancontainer {
+  width:50%;
+  height:100%;
+  position: relative;
+}
+
+.mobileid, .mobilejian{
+      width:100%;
+    height:50%;
+}
+
+.jianimage{
+  height: 100%;
+  display:block;
+  position:absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.mobilejian > .jianimage{
+      right: 50%;
+    transform: translateX(50%);
+}
+
+
+.btn{
+  color: var(--mainFgColor);
+  background-color: #ffffff;
+  border: none;
+  border-radius:2.5rem;
+  padding: 0;
+  width: 8em;
+  height: 3rem;
+  font-family: 'Kyobo Handwriting 2019', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor:pointer;
+}
+
+@media (max-width:768px){
+  .contentscontainer{
+    display:block;
+  }
+  .idcontainer,.jiancontainer  {
+    width:100%;
+    height:50%;
+  }
+
+  .jianimage {
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .btn {
+    width: 7.5rem;
+    height: 2.5rem;
+    font-size: 1.1rem;
+  }
+}
