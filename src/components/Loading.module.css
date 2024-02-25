@@ -1,0 +1,52 @@
+.desk {
+  flex-direction: row;
+}
+
+.jianimage {
+  width: 10rem;
+   margin: 1.5rem;
+}
+.contentscontainer{
+  width: 20rem;
+  margin: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.contentscontainer>p{
+  font-size: 1.2rem;
+  color: var(--mainOrColor);
+  margin: 0.5rem 0;
+}
+
+.loadingbar{
+  margin-top: 1rem;
+  width: 20rem;
+  height: 10px;
+  background-color:var(--mainOrColor);
+  border-radius: 2rem;
+  animation: loading 4.5s ease-out infinite;
+  align-self: flex-start;
+}
+
+@keyframes loading{
+from {
+  width:0%;
+} to{
+  width:100%;
+}
+}
+
+
+@media(max-width:768px){
+  .desk {
+    flex-direction: column;
+  }
+  .contentscontainer{
+    width: 15rem;
+  }
+}
+
+@media (min-width:1024px){
+  .jianimage{
+    width: 13rem;
+  }
+}

@@ -1,0 +1,58 @@
+.desk {
+  flex-direction: row;
+}
+
+.imagecontainer {
+  margin: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+}
+.errorimage {
+  margin-top: 1rem;
+  width: 3rem;
+  animation: error 1.5s linear infinite;
+}
+.jianimage {
+  width: 10rem;
+}
+
+@keyframes error {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.contentscontainer {
+  margin: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.contentscontainer > p {
+  font-size: 1.2rem;
+  color: var(--mainOrColor);
+  margin: 0.5rem 0;
+}
+
+
+@media (max-width: 768px) {
+  .desk {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1024px) {
+  .errorimage{
+    width:4rem;
+  }
+  .jianimage {
+    width: 13rem;
+  }
+  .contentscontainer > p{
+    font-size: 1.4rem;
+  }
+}

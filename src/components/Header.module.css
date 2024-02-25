@@ -59,6 +59,10 @@
   font-size: 1.7rem;
 }
 
+.home{
+  text-align:left;
+}
+
 .nav {
   width: 100%;
   background-color: var(--mainYeColor);
@@ -104,7 +108,7 @@
     padding-left: 3rem;
   }
   .nav > a {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -117,7 +121,7 @@
   }
   .nav > a {
     margin: 0 0.7rem;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 }
 

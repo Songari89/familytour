@@ -19,7 +19,7 @@
 :root.mobile {
   --bgColor: #db6538;
   --navColor: #185146;
-  --selectBgColor: #ffc33e;
+  --selectBgColor: #185146;
   --mainBtnColor: #185146;
   --subBtnColor: #db6538;
 }
@@ -90,9 +90,27 @@ ul {
   overflow: hidden;
 }
 
+.section {
+  width: 100%;
+  height: 100%;
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  overflow: auto;
+}
+
+.back {
+  font-size: 1.5rem;
+  margin: 0 0.6rem;
+  position:relative;
+}
+
 .menucontainer {
   width: 4rem;
-  background-color: #ddd;
+  position: absolute;
+  top: 1rem;
+  left:1rem;
 }
 
 .menu {
@@ -102,4 +120,10 @@ ul {
 .line {
   width: 100%;
   display: block;
+}
+
+@media (min-width: 1024px) {
+  .menu{
+    font-size: 1.6rem;
+  }
 }
