@@ -4,16 +4,18 @@
       "day1": "24/05/10",
       "route1": "인천(ICN) → 나고야(NGO)",
       "time1": "10 : 45 → 12 : 40 (약 2시간)",
-      "day2": "24/05/2",
+      "day2": "24/05/12",
       "route2": "나고야(NGO) → 인천(ICN)",
       "time2": "13 : 50 → 15 : 45 (약 2시간)"
     },
     "parking": {
       "bookurl": "https://parking.airport.kr/reserve",
       "address": "인천광역시 중구 제 2터미널대로 338",
-      "parkingurl": "https://naver.me/GrNsyNPG",
-      "cost": "일 9천원",
-      "line1": "이용 최대 45일전부터 최소 3일전까지 에서 예약 가능",
+      "naverurl": "https://naver.me/GrNsyNPG",
+      "tmapurl" : "https://tmap.life/b48f8162",
+      "cost": "하루 9천원",
+      "line1_1": "이용 최대 45일전부터 최소 3일전까지", 
+      "line1_2" :"에서 예약 가능",
       "line2": "입차 예정 시간 2시간 전부터 4시간 이내까지 입차 가능 "
     },
     "accommodation": {
@@ -25,20 +27,20 @@
       "hotel": "http://abnb.me/ZMNo7firjHb"
     },
     "ticket": {
-      "grandparents": [
-        "/data/images/ticket/mrsong.jpg",
-        "/data/images/ticket/mrspark.jpg"
-      ],
-      "parents": [
-        "/data/images/ticket/mrhan.jpg",
-        "/data/images/ticket/mrssong.jpg",
-        "/data/images/ticket/mshan.jpg"
-      ],
+      "grandparents": {
+        "father": "/data/images/ticket/mrsong.jpg",
+        "mother": "/data/images/ticket/mrspark.jpg"
+      },
+      "parents": {
+        "father": "/data/images/ticket/mrhan.jpg",
+        "mother": "/data/images/ticket/mrssong.jpg",
+        "jian": "/data/images/ticket/mshan.jpg"
+      },
       "aunt": "/data/images/ticket/mssong.jpg",
       "uncle": "/data/images/ticket/mrsongjr.jpg"
     },
     "vjw": {
-      "line1": "VJS(Visit Japan Web)이란? 입국 수속 시 '입국심사', '세관신고', '면세구입'등을 웹으로 할 수 있는 서비스 ",
+      "line1": "VJW(Visit Japan Web)란? 입국 수속 시 '입국심사', '세관신고', '면세구입' 등을 웹으로 할 수 있는 서비스 ",
       "line2": "출국 전까지 등록하고 QR코드 발급(캡쳐본 사용 불가 - 인터넷 접속 필요)",
       "url": "https://vjw-lp.digital.go.jp/ko/"
     }

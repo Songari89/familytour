@@ -74,9 +74,9 @@ ul {
   height: 70vh;
   position: absolute;
   bottom: 2.5rem;
-  left: 60%;
-  transform: translateX(-60%);
-  overflow: hidden;
+  left: 65%;
+  transform: translateX(-65%);
+
 }
 
 .deskmode {
@@ -87,7 +87,7 @@ ul {
   bottom: 3rem;
   left: 50%;
   transform: translateX(-50%);
-  overflow: hidden;
+  overflow: auto;
 }
 
 .section {
@@ -97,7 +97,7 @@ ul {
   flex-direction: column;
   justify-content:center;
   align-items:center;
-  overflow: auto;
+
 }
 
 .back {
@@ -107,10 +107,11 @@ ul {
 }
 
 .menucontainer {
-  width: 4rem;
-  position: absolute;
+  width: 100%;
+  margin: 1rem 0;
+  /* position: absolute;
   top: 1rem;
-  left:1rem;
+  left:1rem; */
 }
 
 .menu {
@@ -118,7 +119,7 @@ ul {
 }
 
 .line {
-  width: 100%;
+  width: 4rem;
   display: block;
 }
 

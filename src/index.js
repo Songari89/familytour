@@ -14,12 +14,13 @@ import Upload from "./pages/Upload";
 import Places from "./pages/Places";
 import UploadPlace from "./pages/UploadPlace";
 import Selected from "./pages/Selected";
+import Modal from "./components/Modal";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <NotFound />,
+    errorElement: <Modal />,
     children: [
       { index: true, element: <Select /> },
       { path: "/selected", element: <Selected /> },
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
       { path: "/upload", element: <Upload /> },
       { path: "/places", element: <Places /> },
       { path: "/uploadplace", element: <UploadPlace /> },
+      // {path:"/modal", element:<Modal/>}
     ],
   },
 ]);
