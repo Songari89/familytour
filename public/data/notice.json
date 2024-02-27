@@ -40,7 +40,8 @@
       "uncle": "/data/images/ticket/mrsongjr.jpg"
     },
     "vjw": {
-      "line1": "VJW(Visit Japan Web)란? 입국 수속 시 '입국심사', '세관신고', '면세구입' 등을 웹으로 할 수 있는 서비스 ",
+      "line1": "VJW(Visit Japan Web)란?",
+      "line1_1": "입국 수속 시 '입국심사', '세관신고', '면세구입' 등을 웹으로 할 수 있는 서비스 ",
       "line2": "출국 전까지 등록하고 QR코드 발급(캡쳐본 사용 불가 - 인터넷 접속 필요)",
       "url": "https://vjw-lp.digital.go.jp/ko/"
     }

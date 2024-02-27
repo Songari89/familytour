@@ -1,0 +1,9 @@
+.dot{
+  color:var(--mainYeColor);
+}
+
+.modalbtn{
+  margin: 0 0.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid #333;
+}
