@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./TodoList.module.css";
 import Title from "../components/Title";
 import TodoListDetail from "./TodoListDetail";
+import { IdContext } from "../context/IdProvider";
 
 
 export default function TodoList() {
-  // const {id} = useContext(IdContext);
-  const id = "parents";
+  const {id} = useContext(IdContext);
+  // const id = "parents";
 
   return (
     <section className="section">

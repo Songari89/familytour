@@ -1973,7 +1973,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@firebase/app@npm:0.9.27":
+"@firebase/app@npm:0.9.27, @firebase/app@npm:^0.9.27":
   version: 0.9.27
   resolution: "@firebase/app@npm:0.9.27"
   dependencies:
@@ -2072,7 +2072,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@firebase/database@npm:1.0.3":
+"@firebase/database@npm:1.0.3, @firebase/database@npm:^1.0.3":
   version: 1.0.3
   resolution: "@firebase/database@npm:1.0.3"
   dependencies:
@@ -6980,6 +6980,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "familytour@workspace:."
   dependencies:
+    "@firebase/app": ^0.9.27
+    "@firebase/database": ^1.0.3
     "@tanstack/react-query": ^5.21.7
     "@testing-library/jest-dom": ^5.14.1
     "@testing-library/react": ^13.0.0

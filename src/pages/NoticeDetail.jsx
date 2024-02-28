@@ -8,7 +8,7 @@ import Ticket from "../components/Ticket.jsx";
 
 export default function NoticeDetail({ id }) {
   const {
-    isLodaing,
+    isLoading,
     error,
     data: notice,
   } = useQuery({
@@ -20,7 +20,7 @@ export default function NoticeDetail({ id }) {
     },
   });
 
-  if (isLodaing) {
+  if (isLoading) {
     return <Loading />;
   }
   if (error) {

@@ -12,10 +12,10 @@
       "bookurl": "https://parking.airport.kr/reserve",
       "address": "인천광역시 중구 제 2터미널대로 338",
       "naverurl": "https://naver.me/GrNsyNPG",
-      "tmapurl" : "https://tmap.life/b48f8162",
+      "tmapurl": "https://tmap.life/b48f8162",
       "cost": "하루 9천원",
-      "line1_1": "이용 최대 45일전부터 최소 3일전까지", 
-      "line1_2" :"에서 예약 가능",
+      "line1_1": "이용 최대 45일전부터 최소 3일전까지",
+      "line1_2": "에서 예약 가능",
       "line2": "입차 예정 시간 2시간 전부터 4시간 이내까지 입차 가능 "
     },
     "accommodation": {

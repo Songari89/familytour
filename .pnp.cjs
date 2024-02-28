@@ -28,6 +28,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@firebase/app", "npm:0.9.27"],\
+            ["@firebase/database", "npm:1.0.3"],\
             ["@tanstack/react-query", "virtual:d99da03f5a2c3101adb6e0990c4a2435c881b072fb73663b78b5623dbef08edff8cb407fa4901a39d0dac1a66ee6dcbc990a22c3be5413d3ab733dca715f0224#npm:5.21.7"],\
             ["@testing-library/jest-dom", "npm:5.17.0"],\
             ["@testing-library/react", "virtual:d99da03f5a2c3101adb6e0990c4a2435c881b072fb73663b78b5623dbef08edff8cb407fa4901a39d0dac1a66ee6dcbc990a22c3be5413d3ab733dca715f0224#npm:13.4.0"],\
@@ -10327,6 +10329,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["familytour", "workspace:."],\
+            ["@firebase/app", "npm:0.9.27"],\
+            ["@firebase/database", "npm:1.0.3"],\
             ["@tanstack/react-query", "virtual:d99da03f5a2c3101adb6e0990c4a2435c881b072fb73663b78b5623dbef08edff8cb407fa4901a39d0dac1a66ee6dcbc990a22c3be5413d3ab733dca715f0224#npm:5.21.7"],\
             ["@testing-library/jest-dom", "npm:5.17.0"],\
             ["@testing-library/react", "virtual:d99da03f5a2c3101adb6e0990c4a2435c881b072fb73663b78b5623dbef08edff8cb407fa4901a39d0dac1a66ee6dcbc990a22c3be5413d3ab733dca715f0224#npm:13.4.0"],\

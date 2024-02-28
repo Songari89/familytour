@@ -1,26 +1,48 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./TodoListDetail.module.css";
 import AddList from "./AddList";
 import Todo from "./Todo";
+import {useQueryClient, useQuery} from '@tanstack/react-query'
+import { getTodo } from "../apis/firebase";
+import Loading from "../components/Loading";
+import Error from "../components/Error";
 
-export default function TodoListDetail({useId}) {
-  const [todos, setTodos] = useState([
-    { id: "1234", text: "여권", status: "active" },
-    { id: "5678", text: "환전(현금)", status: "active" },
-  ]);
-  const handleAdd = (todo) => {
-    setTodos([...todos, todo])
-  }
-  const handleUpdate = (updated) => setTodos(todos.map(t => (t.id === updated.id ? updated : t)))
-  const handleDelete = (deleted) => setTodos(todos.filter(t => t.id !== deleted.id))
+export default function TodoListDetail({userId}) {
+  const [todos, setTodos] = useState();
+  const [checked, setChecked] = useState(false);
+  const queryClient = useQueryClient();
+  const {isLoading, error, data:items} = useQuery({
+    queryKey:['todos', userId || ""],
+    queryFn: () => getTodo(userId),
+    enabled: !!userId
+  })
+
+  const handleClick = () => setChecked(pre => !pre)
+
+  useEffect(() => {
+    if(items) {
+      setTodos(items)
+    }
+  },[items])
+
+    if(isLoading) {
+      return <Loading />;
+    }
+    if (error) {
+      return <Error />;
+    }
+
 
   return (
     <>
-    <ul className={styles.lists}>{todos && todos.map((item) => <Todo key={item.id} todo={item} onUpdate={handleUpdate} onDelete={handleDelete}/> )}</ul>
+    <ul className={styles.lists}>
+      {todos && todos.filter(item => checked? item.status === 'done' : item.status === 'active').map((item) => <Todo key={item.id} todo={item} userId={userId}/> )}</ul>
     <div className={styles.formcontainer}>
-    <AddList useId={useId} onAdd={handleAdd}/>
+    {!checked && <AddList userId={userId}/>}
   
-    </div>  <button></button>
+    </div>  
+    <div className={styles.buttoncontainer}>
+    <button className={styles.checkedbtn} onClick={handleClick}>{checked?"준비할 것!" : "준비 완료!"} </button></div>
     </>
   );
 }
