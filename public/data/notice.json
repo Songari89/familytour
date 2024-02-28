@@ -28,16 +28,16 @@
     },
     "ticket": {
       "grandparents": {
-        "father": "/data/images/ticket/mrsong.jpg",
-        "mother": "/data/images/ticket/mrspark.jpg"
+        "father": "/data/images/ticket/mrsong.png",
+        "mother": "/data/images/ticket/mrspark.png"
       },
       "parents": {
-        "father": "/data/images/ticket/mrhan.jpg",
-        "mother": "/data/images/ticket/mrssong.jpg",
-        "jian": "/data/images/ticket/mshan.jpg"
+        "father": "/data/images/ticket/mrhan.png",
+        "mother": "/data/images/ticket/mrssong.png",
+        "jian": "/data/images/ticket/mshan.png"
       },
-      "aunt": "/data/images/ticket/mssong.jpg",
-      "uncle": "/data/images/ticket/mrsongjr.jpg"
+      "aunt": "/data/images/ticket/mssong.png",
+      "uncle": "/data/images/ticket/mrsongjr.png"
     },
     "vjw": {
       "line1": "VJW(Visit Japan Web)란?",

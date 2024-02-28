@@ -15,7 +15,7 @@ export default function Ticket({ ticket, id }) {
                 <span className={styles.dot}>•</span> 할아버지
                 <button
                   className={styles.modalbtn}
-                  onClick={() => openModal(ticket.parents.father)}
+                  onClick={() => openModal(ticket.grandparents.father)}
                 >
                   티켓 보기
                 </button>
