@@ -11,6 +11,9 @@
 # production
 /build
 
+#privacyfile
+/public/data/images/ticket
+
 # misc
 .DS_Store
 .env.local

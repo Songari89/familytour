@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./TodoList.module.css";
 import Title from "../components/Title";
+import TodoListDetail from "./TodoListDetail";
 
 
 export default function TodoList() {
@@ -18,7 +19,7 @@ export default function TodoList() {
         )}
         {id && (
           <>
-      
+        <TodoListDetail userId={id}/>
           </>
         )}
       </div>

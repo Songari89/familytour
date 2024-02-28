@@ -1,0 +1,27 @@
+.form{
+  width: 100%;
+  padding: 1rem 1.5rem;
+  display:flex;
+  align-items:center;
+  justify-content: space-around;
+}
+
+.input{
+  width: 60%;
+  padding: 0.5rem 0 0.5rem 1rem ;
+  font-size: 1.1rem;
+  font-family: 'Kyobo Handwriting 2019',sans-serif;
+  border: 1.5px solid var(--mainFgColor);
+  border-radius: 0.5rem;
+}
+
+.submitbtn{
+  width: 30%;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  color: #ffffff;
+  background-color: var(--mainBtnColor);
+  border:none;
+  border-radius:0.5rem;
+    font-family: 'Kyobo Handwriting 2019',sans-serif;
+}

@@ -1,0 +1,35 @@
+.lists{
+  width:100%;
+  padding: 1.5rem;
+  height: 75%;
+  overflow: auto;
+}
+
+
+.formcontainer {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+@media(min-width: 1024px){
+  .lists{
+  width: 85%;
+  height: 70%;
+    margin: 0 auto;
+}
+
+.list {
+  padding: 0.8rem 0 0.8rem 4rem;
+  border-bottom : 1px dashed var(--subFontColor);
+  color: var(--mainFgColor);
+  font-size: 1.3rem;
+}
+.formcontainer {
+  width: 85%;
+  margin: 0 auto;
+}
+}

@@ -1,0 +1,39 @@
+.list {
+  padding: 0.5rem 2.5rem 0.5rem 1.5rem;
+  border-bottom : 1px dashed var(--subFontColor);
+  color: var(--mainFgColor);
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.list:first-child{
+  border-top: 1px solid var(--subFontColor);
+}
+
+.list:last-child{
+  border-bottom: 1px solid var(--subFontColor);
+}
+
+.trash{
+  cursor: pointer;
+  width: 1.1rem;
+}
+
+
+
+@media(max-width:450px){
+  .list{
+     padding: 0.5rem 1.5rem 0.5rem 1rem;
+  }
+}
+
+@media(min-width: 1024px){
+.list {
+  padding: 0.8rem 4rem;
+  border-bottom : 1px dashed var(--subFontColor);
+  color: var(--mainFgColor);
+  font-size: 1.3rem;
+}
+}
