@@ -8,5 +8,6 @@ body {
   padding: 0;
   font-family: 'Kyobo Handwriting 2019','Roboto',sans-serif;
   color: var(--fontColor);
+    accent-color:var(--mainOrColor);
 }
 
