@@ -70,6 +70,7 @@ ul {
   padding:0;
 }
 
+
 /* 섹션 기본 설정 */
 .mobilemode {
   margin: 0 auto;
@@ -135,5 +136,9 @@ ul {
 @media (min-width: 1024px) {
   .menu{
     font-size: 1.6rem;
+    width:5rem;
+  }
+  .line{
+    width:5rem;
   }
 }

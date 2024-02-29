@@ -53,17 +53,21 @@ export default function Upload() {
     <section className="section">
       <Title title="사진등록" />
       <div className={styles.contentscontainer}>
+        {(file || film) && 
         <div className={styles.imagecontainer}>
          <PhotoItem file={file} film={film}/>
-        </div>
+        </div> }
         <form className={styles.form} onSubmit={handleSubmit}>
           <input
+            className={styles.file}
             type="file"
             accept="image/*"
+            id="file"
             name="file"
             required
             onChange={handleChange}
           />
+          <label htmlFor="file" className={styles.filelabel}>업로드</label>
           <div className={styles.radiocontainer}>
             <p>필름 선택 :</p>
             <input

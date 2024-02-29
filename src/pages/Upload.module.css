@@ -5,6 +5,7 @@
   display: flex;
   justify-content:center;
   align-items:center;
+
 }
 
 .contentscontainer::-webkit-scrollbar{
@@ -14,8 +15,8 @@
 .imagecontainer{
   width:50%;
   height: 100%;
-  background-color: #ddd;
   position: relative;
+
 }
 
 
@@ -27,6 +28,20 @@
   justify-content: center;
   align-items: flex-start;
   padding-left: 1rem;
+}
+
+.file{
+ display:none;
+}
+
+.filelabel{
+    margin: 0.5rem;
+    padding: 0.5rem 2rem;
+  font-size:1.2rem;
+  background-color: var(--subBtnColor);
+  color:#ffffff;
+  letter-spacing:3px;
+  border-radius:0.5rem;
 }
 
 .text {
@@ -70,6 +85,7 @@
   border-radius: 0.5rem;
   font-family: 'Kyobo Handwriting 2019', sans-serif;
   color: #ffffff;
+    letter-spacing:3px;
 }
 
 @media(max-width:768px){
@@ -78,7 +94,8 @@
   }
   .imagecontainer{
     margin: 0 auto;
-    width: 80%;
+    width: 85%;
+    height: 500px;
   }
   .form{
     width: 90%;
@@ -86,5 +103,11 @@
     align-items: center;
     padding: 0;
     margin: 1.5rem auto;
+  }
+}
+
+@media(max-height:700px){
+  .form{
+    margin-top:8rem;
   }
 }

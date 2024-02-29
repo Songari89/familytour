@@ -1,3 +1,43 @@
-.date{
+.date {
+width:100%;
+text-align: center;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+}
 
+.date > button {
+  border: none;
+  font-size: 1.2rem;
+  color: var(--navColor);
+  font-family: "kyobo Handwriting 2019", sans-serif;
+  margin: 0 1rem;
+  cursor:pointer;
+}
+
+.upload {
+  position:absolute;
+  right: 1rem;
+  top: -45px;
+  background-color: var(--mainBtnColor);
+  padding: 0.5rem 1rem;
+  color:#ffffff;
+  border-radius: 0.5rem;
+
+}
+
+
+@media(max-width:450px){
+  .date{
+    justify-content:normal;
+  }
+  .date > button {
+    margin: 0 1rem;
+  }
+  
+
+  .upload{
+    right:0;
+  }
 }
