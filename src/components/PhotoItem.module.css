@@ -1,0 +1,31 @@
+.image{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 524px;
+  overflow: hidden;
+  border-radius: 0.8rem;
+}
+
+.film {
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  z-index: 1;
+}
+
+.photo{
+
+  width: 100%;
+  max-width:342px;
+  height: auto;
+  min-height: 450px;
+  max-hight:500px;
+  position:absolute;
+  top:0px;
+  left:5px;
+  z-index: -1;
+}

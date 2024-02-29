@@ -1,20 +1,15 @@
 import React, { useState } from "react";
 import styles from "./Upload.module.css";
 import Title from "../components/Title";
-import basic from '../staticimage/basic.png';
-import totoro from '../staticimage/totoro.png';
-import pooh from '../staticimage/pooh.png';
 import totoro_sample from '../staticimage/totoro.jpg'
 import pooh_sample from "../staticimage/pooh.jpg";
 import { addNewPhoto, uploadPhoto } from "../apis/firebase";
 import { v4 as uuidv4} from 'uuid'
 import {useQueryClient, useMutation} from '@tanstack/react-query'
 import {useNavigate} from 'react-router-dom'
+import PhotoItem from "../components/PhotoItem";
 
 
-const filmImage ={
-  basic, totoro, pooh
-}
 
 export default function Upload() {
   const [photo, setPhoto] = useState({});
@@ -24,7 +19,6 @@ export default function Upload() {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const addPhoto = useMutation({mutationFn:({photo, id, imageurl}) => addNewPhoto({photo, id, imageurl}), onSuccess: () => queryClient.invalidateQueries(['photos'])})
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const id = uuidv4()
@@ -60,9 +54,7 @@ export default function Upload() {
       <Title title="사진등록" />
       <div className={styles.contentscontainer}>
         <div className={styles.imagecontainer}>
-          <div className={styles.image}>
-          <img className={styles.film} src={filmImage[film]} alt={film}/>
-</div>
+         <PhotoItem file={file} film={film}/>
         </div>
         <form className={styles.form} onSubmit={handleSubmit}>
           <input
