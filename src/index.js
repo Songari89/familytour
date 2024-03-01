@@ -21,7 +21,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <Modal />,
+    errorElement: <NotFound />,
     children: [
       { index: true, element: <Select /> },
       { path: "/selected", element: <Selected /> },

@@ -1,5 +1,6 @@
 .desk {
   flex-direction: row;
+  justify-content: center;
 }
 
 .imagecontainer {

@@ -7,7 +7,6 @@ import useViewport from "../hooks/useViewport";
 export default function Error() {
   const { viewportmode } = useViewport();
 
-  console.log(viewportmode);
   return (
     <section className={`section ${!viewportmode && styles.desk}`}>
       <div className={styles.imagecontainer}>
