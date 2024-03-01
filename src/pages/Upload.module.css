@@ -44,21 +44,43 @@
   border-radius:0.5rem;
 }
 
+.select{
+  width: 50%;
+  margin: 0.5rem 1rem;
+  padding: 0.5rem;
+  border-radius:0.5rem;
+  border : 2px solid var(--mainFgColor);
+  font-size: 1rem;
+}
+
 .text {
   margin: 0.5rem 0;
   width: 90%;
   height: 2.5rem;
   padding:  0.5rem;
   font-size: 1rem;
-  border : 1px solid var(--mainFgColor);
+  border : 2px solid var(--mainFgColor);
   border-radius: 0.5rem;
 }
-.radiocontainer{
+
+.textarea{
+  height: 5rem;
+}
+.optioncontainer{
+  width:100%;
   margin: 0.5rem 0;
   display:flex;
-    justify-content: center;
+    justify-content: flex-start;
   align-items: center;
   color: var(--mainFgColor);
+}
+
+.optioncontainer>label,p{
+  font-size: 1.1rem;
+}
+
+.optioncontainer>input{
+  margin:0 0.5rem;
 }
 
 .basic_sample{

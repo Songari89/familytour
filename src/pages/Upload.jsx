@@ -23,8 +23,10 @@ export default function Upload() {
     e.preventDefault();
     const id = uuidv4()
     setUploading(true);
+    const finalPhoto = {...photo, film: film}
+    console.log(finalPhoto)
     uploadPhoto({file, id}).then( imageurl => { 
-      addPhoto.mutate({ photo, id, imageurl }, {
+      addPhoto.mutate({finalPhoto, id, imageurl }, {
         onSuccess: () => {
           setPhoto({})
           setFile(null)
@@ -32,7 +34,6 @@ export default function Upload() {
       });
     }).finally(() => {
       setUploading(false);
-    
       navigate('/photo');
     })
   }
@@ -48,15 +49,17 @@ export default function Upload() {
     }
     setPhoto({...photo, [name]: value})
   }
+
   
   return (
     <section className="section">
       <Title title="사진등록" />
       <div className={styles.contentscontainer}>
-        {(file || film) && 
-        <div className={styles.imagecontainer}>
-         <PhotoItem file={file} film={film}/>
-        </div> }
+        {(file || film) && (
+          <div className={styles.imagecontainer}>
+            <PhotoItem file={file} film={film} mode="sample" />
+          </div>
+        )}
         <form className={styles.form} onSubmit={handleSubmit}>
           <input
             className={styles.file}
@@ -67,8 +70,10 @@ export default function Upload() {
             required
             onChange={handleChange}
           />
-          <label htmlFor="file" className={styles.filelabel}>업로드</label>
-          <div className={styles.radiocontainer}>
+          <label htmlFor="file" className={styles.filelabel}>
+            업로드
+          </label>
+          <div className={styles.optioncontainer}>
             <p>필름 선택 :</p>
             <input
               type="radio"
@@ -88,11 +93,7 @@ export default function Upload() {
               onChange={handleChange}
             />
             <label htmlFor="totoro">
-              <img
-                className={styles.sample}
-                src={totoro_sample}
-                alt="totoro"
-              />
+              <img className={styles.sample} src={totoro_sample} alt="totoro" />
             </label>
             <input
               type="radio"
@@ -105,7 +106,7 @@ export default function Upload() {
               <img className={styles.sample} src={pooh_sample} alt="pooh" />
             </label>
           </div>
-          <input
+          {/* <input
             className={styles.text}
             type="text"
             placeholder="언제?"
@@ -113,7 +114,26 @@ export default function Upload() {
             value={photo.when ?? ""}
             required
             onChange={handleChange}
-          />
+          /> */}
+          <div className={styles.optioncontainer}>
+            <label htmlFor="when">날짜 선택 :</label>
+            <select
+              className={styles.select}
+              name="when"
+              id="when"
+              onChange={handleChange}
+              required
+              defaultValue="defaultValue"
+            >
+              <option disabled value="defaultValue">
+                {" "}
+                ---날짜 선택---{" "}
+              </option>
+              <option value="10May">2024/05/10</option>
+              <option value="11May">2024/05/11</option>
+              <option value="12May">2024/05/12</option>
+            </select>
+          </div>
           <input
             className={styles.text}
             type="text"
@@ -123,14 +143,21 @@ export default function Upload() {
             required
             onChange={handleChange}
           />
-          <input
-            className={styles.text}
+          <textarea
+            className={`${styles.text} ${styles.textarea}`}
             type="text"
-            placeholder="무엇을?"
+            placeholder="무엇을?(글자수 50자까지, 2줄 이상 입력 불가)"
             name="what"
             value={photo.what ?? ""}
             onChange={handleChange}
-          />
+            maxLength="50"
+            onKeyDown={(event) => {
+              const text = event.target.value;
+              if (text.split("\n").length >= 2 && event.key === "Enter") {
+                event.preventDefault();
+              }
+            }}
+          ></textarea>
           <button className={styles.submitbtn}>사진 등록</button>
         </form>
       </div>

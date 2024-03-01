@@ -11,7 +11,7 @@
   padding: 0.5rem 0 0.5rem 1rem ;
   font-size: 1.1rem;
   font-family: 'Kyobo Handwriting 2019',sans-serif;
-  border: 1.5px solid var(--mainFgColor);
+  border: 2px solid var(--mainFgColor);
   border-radius: 0.5rem;
 }
 

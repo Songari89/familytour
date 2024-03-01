@@ -48,6 +48,18 @@ export async function addNewPhoto({ photo, imageurl, id }) {
   });
 }
 
+export async function getPhoto(date){
+  return get(dbRef(database, `photos/${date}`)).then(snapshot => {
+    const items = snapshot.val() || {}
+    return Object.values(items);
+  })
+}
+
+export async function removePhoto({photo}){
+  const databaseRef = `photos/${photo.when}/${photo.id}`;
+  return remove(dbRef(database, databaseRef))
+}
+
 export async function uploadPhoto({ file, id }) {
   const imageRef = storageRef(storage, `photos/${id}`);
 
