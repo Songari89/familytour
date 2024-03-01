@@ -1,15 +1,41 @@
-.image{
+.container{
+  overflow: hidden;
+  border-radius: 0.8rem;
+  position: relative;
+}
+.sampleimage{
+  width: 350px;
+  height: 524px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 350px;
-  height: 524px;
-  overflow: hidden;
-  border-radius: 0.8rem;
-
+}
+.selectedimage{
+    width: 300px;
+    height: 450px;
 }
 
+.contents{
+  width: 220px;
+  height: 80px;
+  position:absolute;
+  left: 20px;
+  top: 360px;
+  z-index: 4;
+  overflow:auto;
+}
+.contents::-webkit-scrollbar{
+ width:0;
+}
+
+.contents > p, pre {
+  margin: 0.1rem 0;
+  font-size: 1rem;
+  text-shadow: 1px -1px 0 #ffffff, -1px 1px 0 #ffffff;
+  color: #000000;
+ white-space: pre-line;
+}
 .film {
   position: absolute;
   top:0;
@@ -19,13 +45,22 @@
 }
 
 .photocontainer {
-  width:320px;
-  height:427px;
   position:absolute;
   top:10px;
   left:15px;
   z-index: -1;
 }
+.samplephoto{
+  width:320px;
+  height:427px;
+}
+
+.selectedphoto{
+  width: 275px;
+  height:366px;
+  left:10px;
+}
+
 
 .photo{
 width: 100%;
@@ -33,11 +68,11 @@ height: 100%;
 }
 
 @media(max-width:450px){
-  .image {
+  .sampleimage {
     width: 300px;
     height: 450px;
   }
-  .photocontainer{
+  .samplephoto{
     width: 275px;
     height:366px;
     left:10px;
@@ -45,7 +80,7 @@ height: 100%;
 }
 
 @media(max-height:700px){
-  .image{
+  .sampleimage{
           margin-top: 4rem;
   }
 }

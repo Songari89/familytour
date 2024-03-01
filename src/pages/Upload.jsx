@@ -26,7 +26,7 @@ export default function Upload() {
     const finalPhoto = {...photo, film: film}
     console.log(finalPhoto)
     uploadPhoto({file, id}).then( imageurl => { 
-      addPhoto.mutate({finalPhoto, id, imageurl }, {
+      addPhoto.mutate({photo:finalPhoto, id, imageurl }, {
         onSuccess: () => {
           setPhoto({})
           setFile(null)

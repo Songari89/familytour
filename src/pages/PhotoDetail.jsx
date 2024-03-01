@@ -5,9 +5,7 @@ import {useLocation} from 'react-router-dom'
 import { getPhoto } from "../apis/firebase";
 import PhotoItem from "../components/PhotoItem";
 
-export default function PhotoDetail() {
-  const location = useLocation();
-  const date = location.state?.date
+export default function PhotoDetail({date}) {
   const {isLoading, error, data:photos} = useQuery({
     queryKey:['photos',date],
     queryFn: () => getPhoto(date),
@@ -19,7 +17,7 @@ export default function PhotoDetail() {
     <ul>
     
       {photos && 
-      photos.map(photo => <li key={photo.id}><PhotoItem photo={photo}/> </li>)}
+      photos.map(photo => <li key={photo.id}><PhotoItem photo={photo} mode="selected"/> </li>)}
     </ul>
   );
 }

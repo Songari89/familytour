@@ -1,32 +1,38 @@
 import React, { useState } from "react";
 import styles from "./Photo.module.css";
 import Title from "../components/Title";
-import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom'
+
 
 import PhotoDetail from "./PhotoDetail";
 
 
 export default function Photo() {
+const [date, setDate] = useState("10May");
 
+const handleClick = (e) => {
+  const date = e.target.dataset.id;
+  setDate(date);
+}
     return (
       <section className="section">
         <Title title="사진첩" category="photo" />
         <div className={styles.date}>
-          <Link to="/photo/10May" state={{ date: "10May" }}>
+          <button data-id="10May" onClick={handleClick}>
             5 / 10
-          </Link>
-          <Link to="/photo/11May" state={{ date: "11May" }}>
+          </button>
+          <button data-id="11May" onClick={handleClick}>
             5 / 11
-          </Link>
-          <Link to="/photo/12May" state={{ date: "12May" }}>
+          </button>
+          <button data-id="12May" onClick={handleClick}>
             5 / 12
-          </Link>
+          </button>
           <Link to="/upload" className={styles.upload}>
             사진 등록
           </Link>
         </div>
         <div className={styles.contentscontainer}>
-          <PhotoDetail />
+          <PhotoDetail date={date}/>
         </div>
       </section>
     );;

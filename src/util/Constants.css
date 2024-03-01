@@ -54,9 +54,13 @@
   scr: url(../fonts/Kyobo Handwriting 2019.otf) format("opentype");
 }
 
-p {
+p , pre {
   padding: 0;
   margin: 0;
+}
+
+pre{
+  font-family: "Kyobo Handwriting 2019", sans-serif;
 }
 
 a {

@@ -19,22 +19,32 @@ const date = {
 export default function PhotoItem({photo, film, file, mode}) {
   
   return (
-    <div className={styles.image}>
+    <div className={`${styles.container} ${styles[`${mode}image`]}`}>
       {mode === "sample" && film && (
         <img className={styles.film} src={filmImage[film]} alt={film} />
       )}
-      {mode === "photo" && photo && (
+      {mode === "selected" && photo && (
         <img className={styles.film} src={filmImage[photo.film]} alt={film} />
       )}
-      <div className={styles.photocontainer}>
-        {file && (
+      <div className={`${styles.photocontainer} ${styles[`${mode}photo`]}`}>
+        {mode === "sample" && file && (
           <img
             className={styles.photo}
             src={URL.createObjectURL(file)}
             alt="photo"
           />
         )}
+        {mode === "selected" && photo && (
+          <img className={styles.photo} src={photo.image} alt="photo" />
+        )}
       </div>
+      {mode === "selected" && photo && (
+      <div className={styles.contents}>
+        <p>{date[photo.when]}</p>
+        <p>{photo.where}</p>
+        <pre>{photo.what}
+        </pre>
+      </div>)}
     </div>
   );
 }
