@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./PhotoItem.module.css";
 import basic from "../staticimage/basic.png";
 import totoro from "../staticimage/totoro 2.png";
 import pooh from "../staticimage/pooh 2.png";
+import { ModalContext } from "../context/ModalProvider";
+import html2canvas from 'html2canvas';
 
 const filmImage = {
   basic,
@@ -16,12 +18,21 @@ const date = {
 };
 
 export default function PhotoItem({ photo, film, file, mode }) {
+  const {openModal} = useContext(ModalContext);
   const filmScr = mode === "sample" ? filmImage[film] : filmImage[photo.film];
   const imageScr = mode === "sample" ? URL.createObjectURL(file) : photo.image;
   const ShowContents = mode === "selected" && photo;
+  const handleCapture = () => {
+    const element = document.getElementById('capture')
+    html2canvas(element,{scale: 4}).then(canvas => {
+      const image = canvas.toDataURL();
+      console.log(image)
+      openModal(image)
+    })
+  }
 
   return (
-    <div className={`${styles.container} ${styles[`${mode}image`]}`}>
+    <div id="capture" className={`${styles.container} ${styles[`${mode}image`]}`} onClick={handleCapture}>
       <img className={styles.film} src={filmScr} alt={film} />
       <div className={`${styles.photocontainer} ${styles[`${mode}photo`]}`}>
         <img className={styles.photo} src={imageScr} alt="photo" />
