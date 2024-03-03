@@ -22,7 +22,7 @@ export default function PhotoDetail({date}) {
     
     <ul className={styles.lists}>
       {photos && 
-      photos.map(photo => <li key={photo.id}><PhotoItem photo={photo} mode="selected"/> </li>)}
+      photos.map(photo => <li key={photo.id}> </li>)}
     </ul>
   );
 }

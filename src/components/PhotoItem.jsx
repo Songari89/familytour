@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import styles from "./PhotoItem.module.css";
 import basic from "../staticimage/basic.png";
 import totoro from "../staticimage/totoro 2.png";
 import pooh from "../staticimage/pooh 2.png";
 import { ModalContext } from "../context/ModalProvider";
-import html2canvas from 'html2canvas';
+import DomToImage from "dom-to-image";
 
 const filmImage = {
   basic,
@@ -17,33 +17,36 @@ const date = {
   "12May": "2024년 5월 12일",
 };
 
-export default function PhotoItem({ photo, film, file, mode }) {
-  const {openModal} = useContext(ModalContext);
-  const filmScr = mode === "sample" ? filmImage[film] : filmImage[photo.film];
-  const imageScr = mode === "sample" ? URL.createObjectURL(file) : photo.image;
-  const ShowContents = mode === "selected" && photo;
-  const handleCapture = () => {
-    const element = document.getElementById('capture')
-    html2canvas(element,{scale: 4}).then(canvas => {
-      const image = canvas.toDataURL();
-      console.log(image)
-      openModal(image)
-    })
-  }
+export default function PhotoItem({ photo, file, mode }) {
+  const imageStyles = `${styles.imagecontainer} ${styles[`${mode}image`]}`;
+  const photoStyles = `${styles.photocontainer} ${styles[`${mode}photo`]}`;
+  const contentsStyles = `${styles.contents} ${styles[`${mode}contents`]}`;
 
   return (
-    <div id="capture" className={`${styles.container} ${styles[`${mode}image`]}`} onClick={handleCapture}>
-      <img className={styles.film} src={filmScr} alt={film} />
-      <div className={`${styles.photocontainer} ${styles[`${mode}photo`]}`}>
-        <img className={styles.photo} src={imageScr} alt="photo" />
-      </div>
-      {ShowContents && (
-        <div className={styles.contents}>
-          <p>{date[photo.when]}</p>
-          <p>{photo.where}</p>
-          <pre>{photo.what}</pre>
+    <>
+      {(photo.film || file) && (
+        <div className={imageStyles}>
+          <img
+            className={styles.film}
+            src={filmImage[photo.film]}
+            alt={photo.film}
+          />
+          {file && (
+            <div className={photoStyles}>
+              <img
+                className={styles.photo}
+                src={URL.createObjectURL(file)}
+                alt="photo"
+              />
+            </div>
+          )}
+          <div className={contentsStyles}>
+            <p className={`${styles[`${mode}text`]}`}>{date[photo.when]}</p>
+            <p className={`${styles[`${mode}text`]}`}>{photo.where}</p>
+            <pre className={`${styles[`${mode}textarea`]}`}>{photo.what}</pre>
+          </div>
         </div>
       )}
-    </div>
+    </>
   );
 }
