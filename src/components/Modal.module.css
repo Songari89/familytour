@@ -6,16 +6,30 @@
   left:0;
   background-color: rgba(0,0,0,0.5);
   z-index: 4;
-  display: flex;
-  align-items: center;
-  justify-content:center;
-  padding: 2rem 0;
+}
+
+.imagecontainer{
+  width: 100vw;
+  height: 100vh;
+display: flex;
+flex-direction:column;
+align-items: center;
+justify-content:center;
+}
+
+.deletebtn{
+  padding: 0.3rem 1rem;
+  margin: 0.5rem 0 1.5rem 0;
+  border:none;
+  border-radius:2rem;
+  background-color: red;
+  color:#ffffff;
 }
 
 .image {
-  width: 100%;
-  height: 100%;
-  object-fit: none;
+  margin-bottom: 1rem;
+  height: 87%;
+  object-fit: cover;
 }
 
 
@@ -23,6 +37,11 @@
 
 @media (max-width: 595px) {
   .image {
-    object-fit: cover; 
+    width: 100%;
+    object-fit: contain; 
   }
+  .deletebtn{
+  padding: 0.5rem 1.2rem;
+    margin:0;
+}
 }

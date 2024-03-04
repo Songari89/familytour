@@ -39,12 +39,12 @@ export async function removeTodo({ userId, id }) {
   return remove(dbRef(database, `todos/${userId}/${id}`));
 }
 
-export async function addNewPhoto({ photo, imageurl, id }) {
+export async function addNewPhoto({ photo, imageUrl, id }) {
   const date = photo.when;
   return set(dbRef(database, `photos/${date}/${id}`), {
     ...photo,
     id,
-    image: imageurl,
+    image: imageUrl,
   });
 }
 
@@ -60,10 +60,10 @@ export async function removePhoto({photo}){
   return remove(dbRef(database, databaseRef))
 }
 
-export async function uploadPhoto({ file, id }) {
-  const imageRef = storageRef(storage, `photos/${id}`);
+export async function uploadPhoto({ blob, id }) {
+  const imageRef = storageRef(storage, `photos/${id}.png`);
 
-  return uploadBytes(imageRef, file).then((snapshot) =>
+  return uploadBytes(imageRef, blob).then((snapshot) =>
     getDownloadURL(snapshot.ref).then((downloadURL) => {
       return downloadURL;
     })

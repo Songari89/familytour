@@ -41,6 +41,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["firebase", "npm:10.8.0"],\
             ["html2canvas", "npm:1.4.1"],\
             ["react", "npm:18.2.0"],\
+            ["react-confirm-alert", "virtual:d99da03f5a2c3101adb6e0990c4a2435c881b072fb73663b78b5623dbef08edff8cb407fa4901a39d0dac1a66ee6dcbc990a22c3be5413d3ab733dca715f0224#npm:3.0.6"],\
             ["react-dom", "virtual:d99da03f5a2c3101adb6e0990c4a2435c881b072fb73663b78b5623dbef08edff8cb407fa4901a39d0dac1a66ee6dcbc990a22c3be5413d3ab733dca715f0224#npm:18.2.0"],\
             ["react-router-dom", "virtual:d99da03f5a2c3101adb6e0990c4a2435c881b072fb73663b78b5623dbef08edff8cb407fa4901a39d0dac1a66ee6dcbc990a22c3be5413d3ab733dca715f0224#npm:6.22.1"],\
             ["react-scripts", "virtual:d99da03f5a2c3101adb6e0990c4a2435c881b072fb73663b78b5623dbef08edff8cb407fa4901a39d0dac1a66ee6dcbc990a22c3be5413d3ab733dca715f0224#npm:5.0.1"],\
@@ -10372,6 +10373,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["firebase", "npm:10.8.0"],\
             ["html2canvas", "npm:1.4.1"],\
             ["react", "npm:18.2.0"],\
+            ["react-confirm-alert", "virtual:d99da03f5a2c3101adb6e0990c4a2435c881b072fb73663b78b5623dbef08edff8cb407fa4901a39d0dac1a66ee6dcbc990a22c3be5413d3ab733dca715f0224#npm:3.0.6"],\
             ["react-dom", "virtual:d99da03f5a2c3101adb6e0990c4a2435c881b072fb73663b78b5623dbef08edff8cb407fa4901a39d0dac1a66ee6dcbc990a22c3be5413d3ab733dca715f0224#npm:18.2.0"],\
             ["react-router-dom", "virtual:d99da03f5a2c3101adb6e0990c4a2435c881b072fb73663b78b5623dbef08edff8cb407fa4901a39d0dac1a66ee6dcbc990a22c3be5413d3ab733dca715f0224#npm:6.22.1"],\
             ["react-scripts", "virtual:d99da03f5a2c3101adb6e0990c4a2435c881b072fb73663b78b5623dbef08edff8cb407fa4901a39d0dac1a66ee6dcbc990a22c3be5413d3ab733dca715f0224#npm:5.0.1"],\
@@ -16456,6 +16458,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["raf", "npm:3.4.1"],\
             ["regenerator-runtime", "npm:0.13.11"],\
             ["whatwg-fetch", "npm:3.6.20"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["react-confirm-alert", [\
+        ["npm:3.0.6", {\
+          "packageLocation": "./.yarn/cache/react-confirm-alert-npm-3.0.6-79fbf2e309-9ae9bfff2b.zip/node_modules/react-confirm-alert/",\
+          "packageDependencies": [\
+            ["react-confirm-alert", "npm:3.0.6"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:d99da03f5a2c3101adb6e0990c4a2435c881b072fb73663b78b5623dbef08edff8cb407fa4901a39d0dac1a66ee6dcbc990a22c3be5413d3ab733dca715f0224#npm:3.0.6", {\
+          "packageLocation": "./.yarn/__virtual__/react-confirm-alert-virtual-feff210a93/0/cache/react-confirm-alert-npm-3.0.6-79fbf2e309-9ae9bfff2b.zip/node_modules/react-confirm-alert/",\
+          "packageDependencies": [\
+            ["react-confirm-alert", "virtual:d99da03f5a2c3101adb6e0990c4a2435c881b072fb73663b78b5623dbef08edff8cb407fa4901a39d0dac1a66ee6dcbc990a22c3be5413d3ab733dca715f0224#npm:3.0.6"],\
+            ["@types/react", null],\
+            ["@types/react-dom", null],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:d99da03f5a2c3101adb6e0990c4a2435c881b072fb73663b78b5623dbef08edff8cb407fa4901a39d0dac1a66ee6dcbc990a22c3be5413d3ab733dca715f0224#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\

@@ -2,8 +2,40 @@
   width: 100%;
   padding: 2rem 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill,minmax(220px, 1fr));
   gap:1rem;
     place-items:center;
 }
 
+.list{
+  width: 100%;
+}
+
+.image{
+  width:100%;
+}
+
+.trash{
+  margin: 0.2rem;
+  width: 18px;
+  display:block;
+  cursor: pointer;
+}
+.trash:hover{
+  animation: trash 1s ease infinite;
+}
+
+@keyframes trash{
+  25%{
+    transform:scale(1.1) rotate(5deg);
+  }
+  50%{
+    transform:scale(1.1) rotate(-5deg);
+  }
+  75%{
+    transform:scale(1.1) rotate(5deg);
+  }
+  100%{
+transform:scale(1.1) rotate(-5deg);
+  }
+}

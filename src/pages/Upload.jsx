@@ -1,65 +1,72 @@
 import React, { useRef, useState } from "react";
 import styles from "./Upload.module.css";
 import Title from "../components/Title";
-import totoro_sample from '../staticimage/totoro.jpg'
+import totoro_sample from "../staticimage/totoro.jpg";
 import pooh_sample from "../staticimage/pooh.jpg";
 import { addNewPhoto, uploadPhoto } from "../apis/firebase";
-import { v4 as uuidv4} from 'uuid'
-import {useQueryClient, useMutation} from '@tanstack/react-query'
-import {useNavigate} from 'react-router-dom'
+import { v4 as uuidv4 } from "uuid";
+import { useQueryClient, useMutation } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
 import PhotoItem from "../components/PhotoItem";
-
-
+import DomToImage from "dom-to-image";
+import { dataURLtoBlob } from "../apis/convert";
 
 export default function Upload() {
   const [photo, setPhoto] = useState({});
   const [file, setFile] = useState(null);
-  const [uploading, setUploading] =useState(false);
+  const [uploading, setUploading] = useState(false);
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const captureRef = useRef();
-  const addPhoto = useMutation({mutationFn:({photo, id, imageurl}) => addNewPhoto({photo, id, imageurl}), onSuccess: () => queryClient.invalidateQueries(['photos'])})
+  const addPhoto = useMutation({
+    mutationFn: ({ photo, id, imageUrl }) =>
+      addNewPhoto({ photo, id, imageUrl }),
+    onSuccess: () => queryClient.invalidateQueries(["photos"]),
+  });
   const handleSubmit = (e) => {
     e.preventDefault();
-    const id = uuidv4()
+    const id = uuidv4();
     setUploading(true);
-    uploadPhoto({file, id}).then( imageurl => { 
-      addPhoto.mutate({photo, id, imageurl }, {
-        onSuccess: () => {
-          setPhoto({})
-          setFile(null)
-        }
+    captureRef.current.style.display = "block";
+    DomToImage.toPng(captureRef.current)
+      .then((dataUrl) => {
+        const blob = dataURLtoBlob(dataUrl);
+        uploadPhoto({ blob, id }).then((imageUrl) => {
+          addPhoto.mutate(
+            { photo, id, imageUrl },
+            {
+              onSuccess: () => {
+                setPhoto({});
+                setFile(null);
+              },
+            }
+          );
+        });
+      })
+      .finally(() => {
+        captureRef.current.style.display = "none";
+        setUploading(false);
+        navigate("/photo");
       });
-    }).finally(() => {
-      setUploading(false);
-      navigate('/photo');
-    })
-  }
+  };
   const handleChange = (e) => {
-    const {name, value, files} = e.target;
-    if(name === 'file') {
-      setFile(files && files[0])
+    const { name, value, files } = e.target;
+    if (name === "file") {
+      setFile(files && files[0]);
       return;
     }
-    setPhoto({...photo, [name]: value})
-  }
+    setPhoto({ ...photo, [name]: value });
+  };
 
-  console.log(!!photo, !!file)
-  
   return (
     <>
       <section className="section">
         <Title title="사진등록" />
         <div className={styles.contentscontainer}>
           {(file || photo.film) && (
-            <>
-              <div className={styles.imagecontainer}>
-                <PhotoItem photo={photo} file={file} mode="sample" />
-              </div>
-              <div ref={captureRef} style={{ display: "none" }}>
-                <PhotoItem photo={photo} file={file} mode="selected" />
-              </div>
-            </>
+            <div className={styles.imagecontainer}>
+              <PhotoItem photo={photo} file={file} mode="sample" />
+            </div>
           )}
 
           <form className={styles.form} onSubmit={handleSubmit}>
@@ -112,15 +119,6 @@ export default function Upload() {
                 <img className={styles.sample} src={pooh_sample} alt="pooh" />
               </label>
             </div>
-            {/* <input
-            className={styles.text}
-            type="text"
-            placeholder="언제?"
-            name="when"
-            value={photo.when ?? ""}
-            required
-            onChange={handleChange}
-          /> */}
             <div className={styles.optioncontainer}>
               <label htmlFor="when">날짜 선택 :</label>
               <select
@@ -166,6 +164,9 @@ export default function Upload() {
             ></textarea>
             <button className={styles.submitbtn}>사진 등록</button>
           </form>
+        </div>{" "}
+        <div ref={captureRef} style={{ display: "none" }}>
+          <PhotoItem photo={photo} file={file} mode="selected" />
         </div>
       </section>
     </>

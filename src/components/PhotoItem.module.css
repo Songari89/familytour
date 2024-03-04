@@ -5,16 +5,16 @@
   position: relative;
 }
 .sampleimage {
-  width: 350px;
-  height: 524px;
+  width: 300px;
+  height: 450px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 .selectedimage {
-  width: 1200px;
-  height: 1800px;
+  width: 900px;
+  height: 1350px;
   
 }
 
@@ -25,17 +25,18 @@
 }
 
 .samplecontents {
-  width: 280px;
-  height: 100px;
+
+  width: 230px;
+  height: 90px;
   left: 20px;
-  top: 420px;
+  top: 357px;
 }
 
 .selectedcontents {
-  width: 930px;
-  height: 335px;
-  left: 70px;
-  top: 1450px;
+  width: 696px;
+  height: 255px;
+  left: 60px;
+  top: 1080px;
 }
 
 .contents::-webkit-scrollbar {
@@ -50,28 +51,28 @@ pre {
 
 .sampletext {
   margin: 0.1rem 0.3rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
     text-shadow: 1px 0 0 #ffffff, 0 1px 0 #ffffff, -1px 0 0 #ffffff,
     0 -1px 0 #ffffff;
 }
 
 .sampletextarea {
   line-height: 1.1;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
     text-shadow: 1px 0 0 #ffffff, 0 1px 0 #ffffff, -1px 0 0 #ffffff,
     0 -1px 0 #ffffff;
 }
 
 .selectedtext {
-  margin: 0.5rem 1.5rem;
-  font-size: 4rem;
+  margin: 0.5rem 0;
+  font-size: 3rem;
     text-shadow: 3px 0 0 #ffffff, 0 3px 0 #ffffff, -3px 0 0 #ffffff,
     0 -3px 0 #ffffff;
 }
 
 .selectedtextarea {
-  line-weight: 1.3;
-  font-size: 4rem;
+  line-height: 1.2;
+  font-size: 3rem;
     text-shadow: 3px 0 0 #ffffff, 0 3px 0 #ffffff, -3px 0 0 #ffffff,
     0 -3px 0 #ffffff;
 }
@@ -86,19 +87,21 @@ pre {
 
 .photocontainer {
   position: absolute;
-  top: 10px;
-  left: 15px;
+
   z-index: -1;
 }
 .samplephoto {
-  width: 320px;
-  height: 427px;
+  width: 273px;
+  height: 364px;
+    top: 8px;
+  left: 13px;
 }
 
 .selectedphoto {
-  width: 1084px;
-  height: 1440px;
-  left: 55px;
+  width: 813px;
+  height: 1080px;
+  left: 43px;
+  top: 15px;
 }
 
 .photo {
@@ -106,26 +109,8 @@ pre {
   height: 100%;
 }
 
-@media (max-width: 450px) {
-  .sampleimage {
-    width: 300px;
-    height: 450px;
-  }
-  .samplephoto {
-    width: 275px;
-    height: 366px;
-    left: 10px;
-  }
-  .samplecontents {
-    top: 365px;
-  }
-  .sampletext , .sampletextarea{
-    font-size: 1rem;
-  }
-}
-
-@media (max-height: 700px) and (min-width: 450px) {
-  .sampleimage {
-    margin-top: 4rem;
+@media(max-height:700px) and (min-width:768px){
+  .sampleimage{
+    margin-top: 3rem;
   }
 }

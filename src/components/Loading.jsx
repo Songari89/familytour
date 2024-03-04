@@ -6,7 +6,6 @@ import useViewport from "../hooks/useViewport";
 export default function Loading() {
   const { viewportmode } = useViewport();
 
-  console.log(viewportmode);
   return (
     <section className={`section ${!viewportmode && styles.desk}`}>
       <img src={jian} className={styles.jianimage} alt="jian" />

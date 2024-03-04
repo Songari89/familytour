@@ -42,6 +42,7 @@
   color:#ffffff;
   letter-spacing:3px;
   border-radius:0.5rem;
+  cursor:pointer;
 }
 
 .select{
@@ -99,6 +100,7 @@
 
 .submitbtn{
   margin: 0.5rem 0;
+  padding: 0.5rem 0;
   width: 90%;
   height: 2.5rem;
   font-size: 1.1rem;
@@ -108,6 +110,7 @@
   font-family: 'Kyobo Handwriting 2019', sans-serif;
   color: #ffffff;
     letter-spacing:3px;
+    cursor:pointer;
 }
 
 @media(max-width:768px){
@@ -128,8 +131,3 @@
   }
 }
 
-@media(max-height:700px){
-  .form{
-    margin-top:2rem;
-  }
-}

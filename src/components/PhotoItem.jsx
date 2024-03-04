@@ -3,8 +3,6 @@ import styles from "./PhotoItem.module.css";
 import basic from "../staticimage/basic.png";
 import totoro from "../staticimage/totoro 2.png";
 import pooh from "../staticimage/pooh 2.png";
-import { ModalContext } from "../context/ModalProvider";
-import DomToImage from "dom-to-image";
 
 const filmImage = {
   basic,
