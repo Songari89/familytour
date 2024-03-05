@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import styles from "./PhotoDetail.module.css";
 import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query";
-import { getPhoto, removePhoto } from "../apis/firebase";
+import { deletePhoto, getPhoto, removePhoto } from "../apis/firebase";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
 import { ModalContext } from "../context/ModalProvider";
@@ -28,6 +28,7 @@ export default function PhotoDetail({ date }) {
 
   
   const handleDelete = (photo) => {
+    deletePhoto({id:photo.id})
  removeItem.mutate({ photo })
  
   };

@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import styles from "./Photo.module.css";
 import Title from "../components/Title";
 import {Link} from 'react-router-dom'
-
-
 import PhotoDetail from "./PhotoDetail";
 
 
@@ -16,7 +14,7 @@ const handleClick = (e) => {
 }
     return (
       <section className="section">
-        <Title title="사진첩" category="photo" />
+        <Title title="사진첩" />
         <div className={styles.date}>
           <button data-id="10May" onClick={handleClick}>
             5 / 10

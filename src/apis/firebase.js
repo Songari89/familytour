@@ -5,6 +5,7 @@ import {
   uploadBytes,
   ref as storageRef,
   getDownloadURL,
+  deleteObject
 } from "firebase/storage";
 
 const firebaseConfig = {
@@ -48,10 +49,28 @@ export async function addNewPhoto({ photo, imageUrl, id }) {
   });
 }
 
+
+
 export async function getPhoto(date){
   return get(dbRef(database, `photos/${date}`)).then(snapshot => {
     const items = snapshot.val() || {}
     return Object.values(items);
+  })
+}
+
+export async function getList(category){
+  return get(dbRef(database, `lists/${category}`)).then(snapshot => {
+    const items = snapshot.val() || {};
+    return Object.values(items);
+  })
+}
+
+export async function addList({list, id, imageUrl}){
+  const category = list.category;
+  return set(dbRef(database, `lists/${category}/${id}`),{
+    ...list,
+    id,
+    image: imageUrl
   })
 }
 
@@ -60,12 +79,17 @@ export async function removePhoto({photo}){
   return remove(dbRef(database, databaseRef))
 }
 
-export async function uploadPhoto({ blob, id }) {
-  const imageRef = storageRef(storage, `photos/${id}.png`);
+export async function uploadPhoto({ type , id, mode }) {
+  const imageRef = storageRef(storage, `${mode}/${id}`);
 
-  return uploadBytes(imageRef, blob).then((snapshot) =>
+  return uploadBytes(imageRef, type).then((snapshot) =>
     getDownloadURL(snapshot.ref).then((downloadURL) => {
       return downloadURL;
     })
   );
+}
+
+export async function deletePhoto({id}){
+  const desertRef = storageRef(storage, `photos/${id}`)
+  return deleteObject(desertRef)
 }

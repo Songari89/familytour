@@ -31,7 +31,7 @@ export default function Upload() {
     DomToImage.toPng(captureRef.current)
       .then((dataUrl) => {
         const blob = dataURLtoBlob(dataUrl);
-        uploadPhoto({ blob, id }).then((imageUrl) => {
+        uploadPhoto({ type: blob, id, mode:"photos" }).then((imageUrl) => {
           addPhoto.mutate(
             { photo, id, imageUrl },
             {
@@ -162,7 +162,7 @@ export default function Upload() {
                 }
               }}
             ></textarea>
-            <button className={styles.submitbtn}>사진 등록</button>
+            <button className={styles.submitbtn}>{uploading? "등록 중...": " 사진 등록"}</button>
           </form>
         </div>{" "}
         <div ref={captureRef} style={{ display: "none" }}>
