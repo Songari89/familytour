@@ -1,0 +1,9 @@
+.container {
+  margin: 0 1rem;
+  display: flex;
+  align-items: center;
+}
+.heartimage{
+  width: 15px;
+  margin-right: 0.2rem;
+}

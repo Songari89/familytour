@@ -9,4 +9,12 @@
   background-color: #ffffff;
   margin: 1.5rem 0;
   border-radius: 0.5rem;
+  overflow: hidden;
+    box-shadow: 0.5px 1px 1px 0.5px rgba(0,0,0,0.1);
+}
+
+@media(max-width: 768px){
+  .list{
+    height: 100%;
+  }
 }

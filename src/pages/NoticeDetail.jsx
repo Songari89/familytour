@@ -87,7 +87,7 @@ export default function NoticeDetail({ id }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              🖥 인천공항 주차 예약 사이트
+              ☞ 인천공항 주차 예약 사이트
             </Link>
             {"\u00A0"}
             {parking.line1_2}
@@ -111,8 +111,9 @@ export default function NoticeDetail({ id }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              📍지도 보기(네이버)
+              ☞ 지도 보기(네이버)
             </Link>
+            {"\u00A0"}
             {"\u00A0"}
             <Link
               className={styles.link}
@@ -120,7 +121,7 @@ export default function NoticeDetail({ id }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              📍지도 보기(티맵)
+              ☞ 지도 보기(티맵)
             </Link>
           </p>
         </li>
@@ -144,7 +145,7 @@ export default function NoticeDetail({ id }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              🔐발급하러 가기
+              ☞ 발급하러 가기
             </Link>
           </p>
         </li>
@@ -163,7 +164,7 @@ export default function NoticeDetail({ id }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              🏠 구경 가기
+              ☞ 구경 가기
             </Link>
           </p>
           <p>
@@ -183,7 +184,7 @@ export default function NoticeDetail({ id }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              📍지도 보기(구글맵)
+              ☞ 지도 보기(구글맵)
             </Link>
           </p>
         </li>

@@ -7,6 +7,8 @@ import useViewport from "./hooks/useViewport";
 import IdProvider from "./context/IdProvider";
 import ModalProvider from "./context/ModalProvider";
 import Modal from "./components/Modal";
+import PassWordModal from "./components/PassWordModal";
+import ConfirmModal from "./components/ConfirmModal";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +26,8 @@ function App() {
             </div>
             <Background viewportmode={viewportmode} />
             <Modal/>
+            <PassWordModal/>
+            <ConfirmModal/>
           </ModalProvider>
         </IdProvider>
       </QueryClientProvider>

@@ -65,6 +65,13 @@ export async function getList(category){
   })
 }
 
+export async function getLike({placeId}){
+  return get(dbRef(database, `likes/${placeId}`)).then(snapshoot => {
+    const items = snapshoot.val() || {};
+    return Object.values(items);
+  })
+}
+
 export async function addList({list, id, imageUrl}){
   const category = list.category;
   return set(dbRef(database, `lists/${category}/${id}`),{
@@ -74,9 +81,17 @@ export async function addList({list, id, imageUrl}){
   })
 }
 
+export async function addLike({id, placeId}){
+  return set(dbRef(database, `likes/${placeId}/${id}`), id)
+}
+
 export async function removePhoto({photo}){
   const databaseRef = `photos/${photo.when}/${photo.id}`;
   return remove(dbRef(database, databaseRef))
+}
+
+export async function removeLike({id, placeId}){
+  return  remove(dbRef(database, `likes/${placeId}/${id}`))
 }
 
 export async function uploadPhoto({ type , id, mode }) {

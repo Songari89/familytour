@@ -7,9 +7,8 @@ import Error from "../components/Error";
 import { ModalContext } from "../context/ModalProvider";
 import trash from "../staticimage/trashred.svg";
 
-
 export default function PhotoDetail({ date }) {
-  const { openModal, setImageDelete } = useContext(ModalContext);
+  const { openModal,openConfirmModal} = useContext(ModalContext);
 
   const {
     isLoading,
@@ -20,20 +19,16 @@ export default function PhotoDetail({ date }) {
     queryFn: () => getPhoto(date),
     enabled: !!date,
   });
-  const queryClient = useQueryClient();
-  const removeItem = useMutation({
-    mutationFn: ({ photo }) => removePhoto({ photo }),
-    onSuccess: () => queryClient.invalidateQueries(["photos"]),
-  });
+  // const queryClient = useQueryClient();
+  // const removeItem = useMutation({
+  //   mutationFn: ({ photo }) => removePhoto({ photo }),
+  //   onSuccess: () => queryClient.invalidateQueries(["photos"]),
+  // });
 
-  
-  const handleDelete = (photo) => {
-    deletePhoto({id:photo.id})
- removeItem.mutate({ photo })
- 
-  };
-
-
+  // const handleDelete = (photo) => {
+  //   deletePhoto({ id: photo.id });
+  //   removeItem.mutate({ photo });
+  // };
 
   if (isLoading) {
     return <Loading />;
@@ -44,30 +39,25 @@ export default function PhotoDetail({ date }) {
 
   return (
     <>
-    <ul className={styles.lists}>
-      {photos &&
-        photos.map((photo) => (
-          <li key={photo.id} className={styles.list}>
-            <img
-              className={styles.trash}
-              src={trash}
-              alt="trash"
-              onClick={() => handleDelete(photo)}
-            />
-            <img
-              className={styles.image}
-              src={photo.image}
-              alt={photo.where}
-              onClick={() => {
-                openModal({ image: photo.image, imageId: photo.id });
-                setImageDelete(true);
-              }}
-            />
-          </li>
-        ))}
-    </ul>
+      <ul className={styles.lists}>
+        {photos &&
+          photos.map((photo) => (
+            <li key={photo.id} className={styles.list}>
+              <img
+                className={styles.trash}
+                src={trash}
+                alt="trash"
+                onClick={() => openConfirmModal({photo})}
+              />
+              <img
+                className={styles.image}
+                src={photo.image}
+                alt={photo.where}
+                onClick={() => openModal(photo.image)}
+              />
+            </li>
+          ))}
+      </ul>
     </>
   );
 }
-
-

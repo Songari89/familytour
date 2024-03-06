@@ -1,11 +1,55 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import fullheart from '../staticimage/fullheart.svg'
 import heart from '../staticimage/heart.svg';
+import styles from './Like.module.css'
+import { IdContext } from "../context/IdProvider";
+import {useQueryClient, useMutation, useQuery} from '@tanstack/react-query';
+import { addLike, getLike, removeLike } from "../apis/firebase";
 
-export default function Like() {
+export default function Like({placeId}) {
+  const {id} = useContext(IdContext);
+  const [like, setLike] = useState();
+  const [selected, setSelected] = useState(false);
+  const queryClient = useQueryClient();
+  const {data: likes} = useQuery({
+    queryKey:['likes', placeId || ""], queryFn:() => getLike({placeId}), enabled: !!id})
+  const addItem = useMutation({
+    mutationFn: ({id, placeId}) => addLike({id, placeId}),
+    onSuccess: () => queryClient.invalidateQueries(["likes", placeId]),
+  });
+  const removeItem = useMutation({
+    mutationFn: ({id, placeId }) => removeLike( {id, placeId }),
+    onSuccess: () => queryClient.invalidateQueries(["likes", placeId]),
+  });
+
+
+  useEffect(() => {
+    if(likes){
+      const isLike = likes.find(like => like && like === id)
+      setSelected(!!isLike)
+      setLike(likes.length)
+      console.log(likes, like);
+    }
+  }, [likes, id, placeId])
+  
+  const handleClick = () => {
+    if(!id){
+      return alert('페이지 상단에서 지안이를 누르고 사용자를 선택해주세요.')
+      ;
+    }
+    if(!selected){
+      addItem.mutate({id, placeId})
+      setSelected(true)
+    }else {
+      removeItem.mutate({id, placeId})
+      setSelected(false)
+    }
+
+  }
   return (
-    <div>
-      <img src={heart} alt="like"/>
+    <div className={styles.container} onClick={handleClick}>
+      <img className={styles.heartimage} src={selected? fullheart : heart} alt="like" />
+      <span>좋아요 {like}</span>
     </div>
   );
 }

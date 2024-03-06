@@ -4,7 +4,7 @@ import { useQueryClient} from '@tanstack/react-query'
 import { ModalContext } from "../context/ModalProvider";
 
 export default function Modal() {
-  const { isOpen, image, closeModal, imageDelete, imageId } = useContext(ModalContext);
+  const { isOpen, image, closeModal} = useContext(ModalContext);
 
   return(
   <>
