@@ -5,7 +5,7 @@ status = 200
 
 [build]
   publish = "public" 
-  command = "CI = yarn run build" 
+  command = "CI= yarn run build" 
 
 [[redirects]]
   from = "/data/images/ticket/*" 
