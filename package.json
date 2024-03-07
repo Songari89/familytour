@@ -2,7 +2,7 @@
   "name": "familytour",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://main--lucent-bienenstitch-7a2d7d.netlify.app",
   "dependencies": {
     "@firebase/app": "^0.9.27",
     "@firebase/database": "^1.0.3",
