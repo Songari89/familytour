@@ -80,11 +80,14 @@
 
 .nav > a {
   color: var(--navColor);
-  margin: 0 0.5rem;
+  margin: 0 0.3rem;
   font-size: 1.3rem;
 }
 .nav > span {
+    margin: 0 0.3rem;
+  font-size: 1.3rem;
   color: var(--navColor);
+  cursor: pointer;
 }
 
 
@@ -115,6 +118,11 @@
     padding-left: 3rem;
   }
   .nav > a {
+    margin: 0 0.2rem;
+    font-size: 1.2rem;
+  }
+  .nav > span {
+    margin: 0 0.2rem;
     font-size: 1.2rem;
   }
 }
@@ -128,6 +136,10 @@
   }
   .nav > a {
     margin: 0 0.7rem;
+    font-size: 1.6rem;
+  }
+  .nav > span {
+        margin: 0 0.7rem;
     font-size: 1.6rem;
   }
   .onlyaunt{

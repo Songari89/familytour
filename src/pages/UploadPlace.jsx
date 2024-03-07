@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "./UploadPlace.module.css";
-import {useNavigate} from 'react-router-dom'
 import { addList, uploadPhoto } from "../apis/firebase";
 import { v4 as uuidv4} from 'uuid'
 import Title from "../components/Title";

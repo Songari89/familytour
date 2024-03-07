@@ -1,5 +1,4 @@
 import React, { createContext, useState } from "react";
-import IdProvider from "./IdProvider";
 
 export const ModalContext = createContext();
 
@@ -9,6 +8,7 @@ export default function ModalProvider({ children }) {
   const [isPassword, setIsPassword] = useState(false);
   const [data, setData] = useState({});
   const [isConfirm, setIsConfirm] = useState(false);
+  const [isSelected, setIsSelected] = useState(false);
 
   const openModal = (image ) => {
     setIsOpen(true);
@@ -20,24 +20,32 @@ export default function ModalProvider({ children }) {
     setImage(null);
   };
 
-  const openPasswordModal = ({data}) => {
+  const openPasswordModal = () => {
     setIsPassword(true)
-    setData({data})
+    
   }
   const closePasswordModal = () => {
     setIsPassword(false)
     setData(null)
   }
 
-  const openConfirmModal = ({photo}) => {
+  const openConfirmModal = () => {
     setIsConfirm(true)
-    setData({photo})
   }
 
   const closeConfirmModal = () => {
     setIsConfirm(false)
-    setImage(null);
+    setData(null)
   }
+
+  const openSelectedModal = () => {
+    setIsSelected(true)
+  }
+
+  const closeSelectedModal = () => {
+    setIsSelected(false)
+  }
+
 
 
   const modalValues = {
@@ -48,7 +56,8 @@ export default function ModalProvider({ children }) {
     isPassword,
     data,
     openPasswordModal, closePasswordModal,
-    isConfirm, openConfirmModal, closeConfirmModal
+    isConfirm, openConfirmModal, closeConfirmModal,
+    isSelected, openSelectedModal, closeSelectedModal, setData
   };
 
 

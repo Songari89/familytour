@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import styles from "./NoticeDetail.module.css";
 import { useQuery } from "@tanstack/react-query";
 import Loading from "../components/Loading.jsx";

@@ -1,31 +1,35 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState } from "react";
 import { ModalContext } from "../context/ModalProvider";
-import styles from './PassWordModal.module.css'
+import styles from "./PassWordModal.module.css";
 
 const password = {
   grandfather: process.env.REACT_APP_PASSWORD_SEOSAN,
   grandmother: process.env.REACT_APP_PASSWORD_KYEONGSOOK,
   father: process.env.REACT_APP_PASSWORD_BONGHWAN,
   mother: process.env.REACT_APP_PASSWORD_YEOWOOL,
+  jian: process.env.REACT_APP_PASSWORD_JIAN,
   aunt: process.env.REACT_APP_PASSWORD_GARAM,
-  auncle: process.env.REACT_APP_PASSWORD_YOUNGWOO
+  auncle: process.env.REACT_APP_PASSWORD_YOUNGWOO,
 };
 
-
 export default function PassWordModal() {
-  const { openModal, isPassword, data,closePasswordModal } = useContext(ModalContext);
-  const [text, setText] = useState();
+  const { openModal, isPassword, data, closePasswordModal } =
+    useContext(ModalContext);
+  const [text, setText] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(text === password[data.id]){
-      setText('')
-      openModal(data.ticket)
+    if (text.trim().length === 0) {
+      alert("비밀번호를 입력하세요.");
+    } else if (text === password[data.id]) {
+      openModal(data.ticket);
       closePasswordModal();
+      setText("");
     } else {
-      alert('비밀번호를 다시 입력해주세요.')
+      alert("올바른 비밀번호를 입력해주세요.");
       setText("");
     }
-  }
+  };
+
 
   return (
     <>
@@ -40,7 +44,12 @@ export default function PassWordModal() {
             </p>
 
             <form className={styles.form} onSubmit={handleSubmit}>
-              <input type="password" value={text} placeholder="ex)0515" onChange={(e) => setText(e.target.value)}/>
+              <input
+                type="password"
+                value={text}
+                placeholder="ex)0515"
+                onChange={(e) => setText(e.target.value)}
+              />
               <button className={styles.submitbtn}>확인</button>
             </form>
           </div>
@@ -49,4 +58,3 @@ export default function PassWordModal() {
     </>
   );
 }
-

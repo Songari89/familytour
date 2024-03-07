@@ -5,17 +5,22 @@ import { useQueryClient, useMutation} from '@tanstack/react-query'
 import { deletePhoto, removePhoto } from "../apis/firebase";
 
 export default function ConfirmModal() {
-  const { isConfirm, data, closeConfirmModal } = useContext(ModalContext);
+  const { isConfirm, data:photo, closeConfirmModal } = useContext(ModalContext);
     const queryClient = useQueryClient();
     const removeItem = useMutation({
-      mutationFn: ({ data }) => removePhoto({ data }),
+      mutationFn: ({ photo }) => removePhoto({ photo }),
       onSuccess: () => queryClient.invalidateQueries(["photos"]),
     });
 
-      const handleDelete = (data) => {
-        deletePhoto({ id: data.id });
-        removeItem.mutate({ data });
-        closeConfirmModal();
+      
+
+      const handleDelete = ({photo}) => {
+        const id = photo.id
+        removeItem.mutate({ photo })
+        deletePhoto({id}).then(() => closeConfirmModal())
+        
+        
+      
       };
 
 
@@ -32,7 +37,7 @@ export default function ConfirmModal() {
 
           
               <div className={styles.confirm}>
-              <p className={styles.submitbtn} onClick={() => handleDelete(data)}>확인</p><p className={styles.cancle} onClick={closeConfirmModal}>
+              <p className={styles.submitbtn} onClick={() => handleDelete({photo})}>확인</p><p className={styles.cancle} onClick={closeConfirmModal}>
               취소
             </p>
           </div>

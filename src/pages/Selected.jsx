@@ -7,7 +7,7 @@ import heart from "../staticimage/fullheart.svg";
 
 export default function Selected() {
   const { viewportmode } = useViewport();
-  const { id, strId } = useContext(IdContext);
+  const { strId } = useContext(IdContext);
 
   return (
     <section className="section">

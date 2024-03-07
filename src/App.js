@@ -9,6 +9,7 @@ import ModalProvider from "./context/ModalProvider";
 import Modal from "./components/Modal";
 import PassWordModal from "./components/PassWordModal";
 import ConfirmModal from "./components/ConfirmModal";
+import SelectedModal from "./components/SelectedModal";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ function App() {
             <Modal/>
             <PassWordModal/>
             <ConfirmModal/>
+            <SelectedModal/>
           </ModalProvider>
         </IdProvider>
       </QueryClientProvider>

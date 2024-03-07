@@ -8,7 +8,7 @@ export default function PlaceItem({ list }) {
   return (
     <div className={styles.container}>
       <div className={styles.imagecontainer}>
-        <img className={styles.image} src={image} alt="image" />
+        <img className={styles.image} src={image} alt="placeimage" />
       </div>
       <div className={styles.contentscontainer}>
         <div className={styles.titlecontainer}>

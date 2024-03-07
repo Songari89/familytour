@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React from "react";
 import styles from "./PhotoItem.module.css";
 import basic from "../staticimage/basic.png";
 import totoro from "../staticimage/totoro 2.png";
@@ -8,7 +8,7 @@ const filmImage = {
   basic,
   totoro,
   pooh,
-};
+}
 const date = {
   "10May": "2024년 5월 10일",
   "11May": "2024년 5월 11일",
@@ -34,7 +34,7 @@ export default function PhotoItem({ photo, file, mode }) {
               <img
                 className={styles.photo}
                 src={URL.createObjectURL(file)}
-                alt="photo"
+                alt="samplephoto"
               />
             </div>
           )}

@@ -105,6 +105,7 @@ export async function uploadPhoto({ type , id, mode }) {
 }
 
 export async function deletePhoto({id}){
-  const desertRef = storageRef(storage, `photos/${id}`)
-  return deleteObject(desertRef)
+  const desertRef = storageRef(storage, `photos/${id}`);
+  return deleteObject(desertRef);
 }
+

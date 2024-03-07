@@ -1,14 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import styles from "./PhotoDetail.module.css";
-import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query";
-import { deletePhoto, getPhoto, removePhoto } from "../apis/firebase";
+import { useQuery } from "@tanstack/react-query";
+import { getPhoto} from "../apis/firebase";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
 import { ModalContext } from "../context/ModalProvider";
 import trash from "../staticimage/trashred.svg";
 
 export default function PhotoDetail({ date }) {
-  const { openModal,openConfirmModal} = useContext(ModalContext);
+  const { openModal, openConfirmModal, setData } = useContext(ModalContext);
 
   const {
     isLoading,
@@ -19,16 +19,7 @@ export default function PhotoDetail({ date }) {
     queryFn: () => getPhoto(date),
     enabled: !!date,
   });
-  // const queryClient = useQueryClient();
-  // const removeItem = useMutation({
-  //   mutationFn: ({ photo }) => removePhoto({ photo }),
-  //   onSuccess: () => queryClient.invalidateQueries(["photos"]),
-  // });
 
-  // const handleDelete = (photo) => {
-  //   deletePhoto({ id: photo.id });
-  //   removeItem.mutate({ photo });
-  // };
 
   if (isLoading) {
     return <Loading />;
@@ -47,7 +38,10 @@ export default function PhotoDetail({ date }) {
                 className={styles.trash}
                 src={trash}
                 alt="trash"
-                onClick={() => openConfirmModal({photo})}
+                onClick={() => {
+                  openConfirmModal();
+                  setData(photo);
+                }}
               />
               <img
                 className={styles.image}

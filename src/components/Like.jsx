@@ -5,8 +5,10 @@ import styles from './Like.module.css'
 import { IdContext } from "../context/IdProvider";
 import {useQueryClient, useMutation, useQuery} from '@tanstack/react-query';
 import { addLike, getLike, removeLike } from "../apis/firebase";
+import { ModalContext } from "../context/ModalProvider";
 
 export default function Like({placeId}) {
+  const {openSelectedModal} = useContext(ModalContext);
   const {id} = useContext(IdContext);
   const [like, setLike] = useState();
   const [selected, setSelected] = useState(false);
@@ -28,14 +30,13 @@ export default function Like({placeId}) {
       const isLike = likes.find(like => like && like === id)
       setSelected(!!isLike)
       setLike(likes.length)
-      console.log(likes, like);
     }
   }, [likes, id, placeId])
   
   const handleClick = () => {
     if(!id){
-      return alert('페이지 상단에서 지안이를 누르고 사용자를 선택해주세요.')
-      ;
+      openSelectedModal();
+      return;
     }
     if(!selected){
       addItem.mutate({id, placeId})

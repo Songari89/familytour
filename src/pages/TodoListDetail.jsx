@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./TodoListDetail.module.css";
 import AddList from "./AddList";
 import Todo from "./Todo";
-import {useQueryClient, useQuery} from '@tanstack/react-query'
+import {useQuery} from '@tanstack/react-query'
 import { getTodo } from "../apis/firebase";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
@@ -10,7 +10,6 @@ import Error from "../components/Error";
 export default function TodoListDetail({userId}) {
   const [todos, setTodos] = useState();
   const [checked, setChecked] = useState(false);
-  const queryClient = useQueryClient();
   const {isLoading, error, data:items} = useQuery({
     queryKey:['todos', userId || ""],
     queryFn: () => getTodo(userId),

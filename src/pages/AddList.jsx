@@ -25,7 +25,7 @@ export default function AddList({ userId }) {
     if (Object.keys(todo).length !== 0) {
       addTodo.mutate({todo, userId}, )
     }
-  }, [todo])
+  }, [todo, userId, addTodo])
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
