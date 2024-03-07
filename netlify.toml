@@ -1,0 +1,14 @@
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+
+[build]
+  publish = "public" 
+  command = "yarn run build" 
+
+[[redirects]]
+  from = "/data/images/ticket/*" 
+  to = "/data/images/ticket/:splat"
+  status = 200 
+  force = false 
