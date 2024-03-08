@@ -2,7 +2,7 @@
   "name": "familytour",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://main--lucent-bienenstitch-7a2d7d.netlify.app",
+  "homepage": "https://stirring-salamander-6dc1ee.netlify.app/",
   "dependencies": {
     "@firebase/app": "^0.9.27",
     "@firebase/database": "^1.0.3",
@@ -13,7 +13,6 @@
     "dom-to-image": "^2.6.0",
     "firebase": "^10.8.0",
     "react": "^18.2.0",
-    "react-confirm-alert": "^3.0.6",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.1",
     "react-scripts": "5.0.1",
