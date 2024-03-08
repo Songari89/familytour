@@ -2,7 +2,7 @@
   "name": "familytour",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://stirring-salamander-6dc1ee.netlify.app/",
+  "homepage": "https://stirring-salamander-6dc1ee.netlify.app",
   "dependencies": {
     "@firebase/app": "^0.9.27",
     "@firebase/database": "^1.0.3",

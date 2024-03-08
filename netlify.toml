@@ -1,13 +1,13 @@
-[[redirects]]
+[redirects]
 from = "/*"
 to = "/index.html"
 status = 200
 
 [build]
   publish = "public" 
-  command = "CI= yarn build" 
+  command = "yarn run build" 
 
-[[redirects]]
+[redirects]
   from = "/data/images/ticket/*" 
   to = "/data/images/ticket/:splat"
   status = 200 
