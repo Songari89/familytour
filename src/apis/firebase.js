@@ -5,7 +5,7 @@ import {
   uploadBytes,
   ref as storageRef,
   getDownloadURL,
-  deleteObject
+  deleteObject,
 } from "firebase/storage";
 
 const firebaseConfig = {
@@ -14,6 +14,9 @@ const firebaseConfig = {
   databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
   projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
   storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
@@ -49,52 +52,50 @@ export async function addNewPhoto({ photo, imageUrl, id }) {
   });
 }
 
-
-
-export async function getPhoto(date){
-  return get(dbRef(database, `photos/${date}`)).then(snapshot => {
-    const items = snapshot.val() || {}
-    return Object.values(items);
-  })
-}
-
-export async function getList(category){
-  return get(dbRef(database, `lists/${category}`)).then(snapshot => {
+export async function getPhoto(date) {
+  return get(dbRef(database, `photos/${date}`)).then((snapshot) => {
     const items = snapshot.val() || {};
     return Object.values(items);
-  })
+  });
 }
 
-export async function getLike({placeId}){
-  return get(dbRef(database, `likes/${placeId}`)).then(snapshoot => {
+export async function getList(category) {
+  return get(dbRef(database, `lists/${category}`)).then((snapshot) => {
+    const items = snapshot.val() || {};
+    return Object.values(items);
+  });
+}
+
+export async function getLike({ placeId }) {
+  return get(dbRef(database, `likes/${placeId}`)).then((snapshoot) => {
     const items = snapshoot.val() || {};
     return Object.values(items);
-  })
+  });
 }
 
-export async function addList({list, id, imageUrl}){
+export async function addList({ list, id, imageUrl }) {
   const category = list.category;
-  return set(dbRef(database, `lists/${category}/${id}`),{
+  return set(dbRef(database, `lists/${category}/${id}`), {
     ...list,
     id,
-    image: imageUrl
-  })
+    image: imageUrl,
+  });
 }
 
-export async function addLike({id, placeId}){
-  return set(dbRef(database, `likes/${placeId}/${id}`), id)
+export async function addLike({ id, placeId }) {
+  return set(dbRef(database, `likes/${placeId}/${id}`), id);
 }
 
-export async function removePhoto({photo}){
+export async function removePhoto({ photo }) {
   const databaseRef = `photos/${photo.when}/${photo.id}`;
-  return remove(dbRef(database, databaseRef))
+  return remove(dbRef(database, databaseRef));
 }
 
-export async function removeLike({id, placeId}){
-  return  remove(dbRef(database, `likes/${placeId}/${id}`))
+export async function removeLike({ id, placeId }) {
+  return remove(dbRef(database, `likes/${placeId}/${id}`));
 }
 
-export async function uploadPhoto({ type , id, mode }) {
+export async function uploadPhoto({ type, id, mode }) {
   const imageRef = storageRef(storage, `${mode}/${id}`);
 
   return uploadBytes(imageRef, type).then((snapshot) =>
@@ -104,8 +105,7 @@ export async function uploadPhoto({ type , id, mode }) {
   );
 }
 
-export async function deletePhoto({id}){
+export async function deletePhoto({ id }) {
   const desertRef = storageRef(storage, `photos/${id}`);
   return deleteObject(desertRef);
 }
-

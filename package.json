@@ -2,7 +2,7 @@
   "name": "familytour",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://stirring-salamander-6dc1ee.netlify.app",
+  "homepage": ".",
   "dependencies": {
     "@firebase/app": "^0.9.27",
     "@firebase/database": "^1.0.3",
@@ -12,6 +12,8 @@
     "@testing-library/user-event": "^13.2.1",
     "dom-to-image": "^2.6.0",
     "firebase": "^10.8.0",
+    "firebase-tools": "^13.4.1",
+    "global": "^4.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.1",
