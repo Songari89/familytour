@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -15,6 +17,8 @@
   --selectBgColor: #db6538;
   --mainBtnColor: #db6538;
   --subBtnColor: #185146;
+  --defaultFont: "Kyobo Handwriting 2019","Gaegu",sans-serif;
+  --titleFont: "KCC-Ganpan","Gaegu",sans-serif;
 }
 
 :root.mobile {
@@ -41,6 +45,13 @@
 }
 
 @font-face {
+  font-family: "KCC-Ganpan", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  scr: url(../fonts/KCC-Ganpan.woff) format("woff");
+}
+
+@font-face {
   font-family: "Kyobo Handwriting 2019", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -54,13 +65,24 @@
   scr: url(../fonts/Kyobo Handwriting 2019.otf) format("opentype");
 }
 
+@font-face {
+  font-family: "Kyobo Handwriting 2019", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  scr: url(../fonts/Kyobo Handwriting 2019.woff) format("woff");
+}
+
+@font-face{
+  font-family: "Gaegu", sans-serif;
+}
+
 p , pre {
   padding: 0;
   margin: 0;
 }
 
 pre{
-  font-family: "Kyobo Handwriting 2019", sans-serif;
+  font-family: "Kyobo Handwriting 2019", "Gaegu", sans-serif;
 }
 
 a {

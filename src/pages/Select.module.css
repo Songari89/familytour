@@ -108,7 +108,7 @@
   padding: 0;
   width: 8em;
   height: 3rem;
-  font-family: "Kyobo Handwriting 2019", sans-serif;
+  font-family:var(--defaultFont);
   font-size: 1.2rem;
   font-weight: 700;
   cursor: pointer;

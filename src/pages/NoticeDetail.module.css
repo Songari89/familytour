@@ -18,7 +18,7 @@
   font-size: 1.1rem;
   border-bottom: 2px solid var(--mainYeColor);
   margin: 0.5rem 0;
-  font-family: 'KCC-Ganpan', sans-serif;
+  font-family: var(--titleFont);
 }
 
 .dot{

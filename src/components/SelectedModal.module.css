@@ -46,5 +46,5 @@
   border:none;
   padding: 0.3rem 0.7rem; 
   cursor:pointer;
-  font-family: "Kyobo Handwriting 2019", sans-serif;
+  font-family:var(--defaultFont);
 }

@@ -5,7 +5,7 @@
   position: relative;
 }
 
-.mobileheadcontainer{
+.mobileheadcontainer {
   width: 90vw;
 }
 
@@ -17,13 +17,12 @@
   animation: rotate 1s ease-in-out infinite;
   z-index: 1;
   cursor: pointer;
-
 }
 
 .jianicon:hover {
   height: 110%;
   top: -5px;
-  left:-5px;
+  left: -5px;
 }
 
 @keyframes rotate {
@@ -34,7 +33,7 @@
     transform: rotate(-5deg);
   }
   100% {
-    transform:  rotate(8deg);
+    transform: rotate(8deg);
   }
 }
 
@@ -53,7 +52,7 @@
 }
 
 .headtext {
-  font-family: "KCC-Ganpan", "Kyobo Handwriting 2019", sans-serif;
+  font-family: "KCC-Ganpan", var(--defaultFont);
   color: var(--mainYeColor);
   text-align: right;
   margin-right: 0.5rem;
@@ -65,8 +64,8 @@
   font-size: 1.7rem;
 }
 
-.home{
-  text-align:left;
+.home {
+  text-align: left;
 }
 
 .nav {
@@ -75,7 +74,7 @@
   padding: 0.5rem 0;
   border-radius: 0.5rem;
   box-shadow: 1px 1px 2px 0.5px rgba(0, 0, 0, 0.2);
-  text-align:center;
+  text-align: center;
   z-index: 1;
 }
 
@@ -85,12 +84,11 @@
   font-size: 1.3rem;
 }
 .nav > span {
-    margin: 0 0.3rem;
+  margin: 0 0.3rem;
   font-size: 1.3rem;
   color: var(--navColor);
   cursor: pointer;
 }
-
 
 @media (max-width: 768px) {
   .headcontainer {
@@ -140,10 +138,10 @@
     font-size: 1.6rem;
   }
   .nav > span {
-        margin: 0 0.7rem;
+    margin: 0 0.7rem;
     font-size: 1.6rem;
   }
-  .onlyaunt{
+  .onlyaunt {
     width: 30px;
     height: 30px;
   }

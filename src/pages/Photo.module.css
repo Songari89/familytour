@@ -12,7 +12,7 @@
   border: none;
   font-size: 1.2rem;
   color: var(--navColor);
-  font-family: "kyobo Handwriting 2019", sans-serif;
+  font-family: var(--defaultFont);
   margin: 0 1rem;
   cursor: pointer;
 }
