@@ -40,6 +40,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["firebase", "npm:10.8.0"],\
             ["firebase-tools", "npm:13.4.1"],\
             ["global", "npm:4.4.0"],\
+            ["html2canvas", "npm:1.4.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:d99da03f5a2c3101adb6e0990c4a2435c881b072fb73663b78b5623dbef08edff8cb407fa4901a39d0dac1a66ee6dcbc990a22c3be5413d3ab733dca715f0224#npm:18.2.0"],\
             ["react-router-dom", "virtual:d99da03f5a2c3101adb6e0990c4a2435c881b072fb73663b78b5623dbef08edff8cb407fa4901a39d0dac1a66ee6dcbc990a22c3be5413d3ab733dca715f0224#npm:6.22.1"],\
@@ -8053,6 +8054,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["base64-arraybuffer", [\
+        ["npm:1.0.2", {\
+          "packageLocation": "./.yarn/cache/base64-arraybuffer-npm-1.0.2-18f4899892-15e6400d2d.zip/node_modules/base64-arraybuffer/",\
+          "packageDependencies": [\
+            ["base64-arraybuffer", "npm:1.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["base64-js", [\
         ["npm:1.5.1", {\
           "packageLocation": "./.yarn/cache/base64-js-npm-1.5.1-b2f7275641-669632eb37.zip/node_modules/base64-js/",\
@@ -9309,6 +9319,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packagePeers": [\
             "@types/postcss",\
             "postcss"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["css-line-break", [\
+        ["npm:2.1.0", {\
+          "packageLocation": "./.yarn/cache/css-line-break-npm-2.1.0-a1fd810d69-37b1fe632b.zip/node_modules/css-line-break/",\
+          "packageDependencies": [\
+            ["css-line-break", "npm:2.1.0"],\
+            ["utrie", "npm:1.0.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -11454,6 +11474,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["firebase", "npm:10.8.0"],\
             ["firebase-tools", "npm:13.4.1"],\
             ["global", "npm:4.4.0"],\
+            ["html2canvas", "npm:1.4.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:d99da03f5a2c3101adb6e0990c4a2435c881b072fb73663b78b5623dbef08edff8cb407fa4901a39d0dac1a66ee6dcbc990a22c3be5413d3ab733dca715f0224#npm:18.2.0"],\
             ["react-router-dom", "virtual:d99da03f5a2c3101adb6e0990c4a2435c881b072fb73663b78b5623dbef08edff8cb407fa4901a39d0dac1a66ee6dcbc990a22c3be5413d3ab733dca715f0224#npm:6.22.1"],\
@@ -12771,6 +12792,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "@types/rspack__core",\
             "@types/webpack",\
             "webpack"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["html2canvas", [\
+        ["npm:1.4.1", {\
+          "packageLocation": "./.yarn/cache/html2canvas-npm-1.4.1-fa13983145-c134324af5.zip/node_modules/html2canvas/",\
+          "packageDependencies": [\
+            ["html2canvas", "npm:1.4.1"],\
+            ["css-line-break", "npm:2.1.0"],\
+            ["text-segmentation", "npm:1.0.3"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -21131,6 +21163,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["text-segmentation", [\
+        ["npm:1.0.3", {\
+          "packageLocation": "./.yarn/cache/text-segmentation-npm-1.0.3-634201c349-2e24632d59.zip/node_modules/text-segmentation/",\
+          "packageDependencies": [\
+            ["text-segmentation", "npm:1.0.3"],\
+            ["utrie", "npm:1.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["text-table", [\
         ["npm:0.2.0", {\
           "packageLocation": "./.yarn/cache/text-table-npm-0.2.0-d92a778b59-b6937a38c8.zip/node_modules/text-table/",\
@@ -21801,6 +21843,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/utils-merge-npm-1.0.1-363bbdfbca-c810954932.zip/node_modules/utils-merge/",\
           "packageDependencies": [\
             ["utils-merge", "npm:1.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["utrie", [\
+        ["npm:1.0.2", {\
+          "packageLocation": "./.yarn/cache/utrie-npm-1.0.2-909cbd985c-c96fbb7d4d.zip/node_modules/utrie/",\
+          "packageDependencies": [\
+            ["utrie", "npm:1.0.2"],\
+            ["base64-arraybuffer", "npm:1.0.2"]\
           ],\
           "linkType": "HARD"\
         }]\

@@ -3,35 +3,34 @@ import styles from "./Upload.module.css";
 import Title from "../components/Title";
 import totoro_sample from "../staticimage/totoro.jpg";
 import pooh_sample from "../staticimage/pooh.jpg";
-import { addNewPhoto, uploadPhoto } from "../apis/firebase";
+import { uploadPhoto } from "../apis/firebase";
 import { v4 as uuidv4 } from "uuid";
-import { useQueryClient, useMutation } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import PhotoItem from "../components/PhotoItem";
-import DomToImage from "dom-to-image";
+// import DomToImage from "dom-to-image";
+import html2canvas from "html2canvas";
 import { dataURLtoBlob } from "../apis/convert";
+import usePhoto from "../hooks/usePhoto";
 
 export default function Upload() {
   const [photo, setPhoto] = useState({});
   const [file, setFile] = useState(null);
   const [uploading, setUploading] = useState(false);
   const navigate = useNavigate();
-  const queryClient = useQueryClient();
   const captureRef = useRef();
-  const addPhoto = useMutation({
-    mutationFn: ({ photo, id, imageUrl }) =>
-      addNewPhoto({ photo, id, imageUrl }),
-    onSuccess: () => queryClient.invalidateQueries(["photos"]),
-  });
+  const {addPhoto} = usePhoto();
   const handleSubmit = (e) => {
     e.preventDefault();
     const id = uuidv4();
     setUploading(true);
     captureRef.current.style.display = "block";
-    DomToImage.toPng(captureRef.current)
-      .then((dataUrl) => {
+    html2canvas(captureRef.current)
+      .then((canvas) => {
+        const dataUrl = canvas.toDataURL();
+
         const blob = dataURLtoBlob(dataUrl);
-        uploadPhoto({ type: blob, id, mode:"photos" }).then((imageUrl) => {
+     
+        uploadPhoto({ type: blob, id, mode: "photos" }).then((imageUrl) => {
           addPhoto.mutate(
             { photo, id, imageUrl },
             {
@@ -48,6 +47,7 @@ export default function Upload() {
         setUploading(false);
         navigate("/photo");
       });
+
   };
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -162,7 +162,9 @@ export default function Upload() {
                 }
               }}
             ></textarea>
-            <button className={styles.submitbtn}>{uploading? "등록 중...": " 사진 등록"}</button>
+            <button className={styles.submitbtn}>
+              {uploading ? "등록 중..." : " 사진 등록"}
+            </button>
           </form>
         </div>{" "}
         <div ref={captureRef} style={{ display: "none" }}>

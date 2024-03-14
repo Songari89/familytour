@@ -1,24 +1,19 @@
 import React, { useContext } from "react";
 import styles from "./PhotoDetail.module.css";
-import { useQuery } from "@tanstack/react-query";
-import { getPhoto} from "../apis/firebase";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
 import { ModalContext } from "../context/ModalProvider";
 import trash from "../staticimage/trashred.svg";
+import usePhoto from "../hooks/usePhoto";
 
 export default function PhotoDetail({ date }) {
   const { openModal, openConfirmModal, setData } = useContext(ModalContext);
 
-  const {
+  const { photoQuery:{
     isLoading,
     error,
-    data: photos,
-  } = useQuery({
-    queryKey: ["photos", date],
-    queryFn: () => getPhoto(date),
-    enabled: !!date,
-  });
+    data: photos,}
+  } = usePhoto(date)
 
 
   if (isLoading) {

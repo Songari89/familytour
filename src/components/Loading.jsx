@@ -7,7 +7,7 @@ export default function Loading() {
   const { viewportmode } = useViewport();
 
   return (
-    <section className={`section ${!viewportmode && styles.desk}`}>
+    <section className={`${styles.section} ${!viewportmode && styles.desk}`}>
       <img src={jian} className={styles.jianimage} alt="jian" />
       <div className={styles.contentscontainer}>
         <p>페이지를 읽고 있어요.</p>

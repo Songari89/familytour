@@ -8,7 +8,7 @@ export default function Error() {
   const { viewportmode } = useViewport();
 
   return (
-    <section className={`section ${!viewportmode && styles.desk}`}>
+    <section className={`${styles.section} ${!viewportmode && styles.desk}`}>
       <div className={styles.imagecontainer}>
         <img src={erroricon} className={styles.errorimage} alt="error" />
         <img src={jian} className={styles.jianimage} alt="jian" />

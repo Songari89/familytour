@@ -17,7 +17,7 @@ const handleClick = (e) => {
           <button data-id="place" onClick={handleClick}>
             가볼만한 곳
           </button>
-          <button data-id="11May" onClick={handleClick}>
+          <button data-id="food" onClick={handleClick}>
             맛집
           </button>
         </div>

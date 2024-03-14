@@ -35,7 +35,6 @@ export default function Header({ viewportmode }) {
 
       <div className={styles.navcontainer}>
         <p className={styles.headtext}>
-          {" "}
           {strId === "이모" && (
             <img
               className={styles.onlyaunt}

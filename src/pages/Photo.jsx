@@ -33,5 +33,5 @@ const handleClick = (e) => {
           <PhotoDetail date={date}/>
         </div>
       </section>
-    );;
+    );
 }

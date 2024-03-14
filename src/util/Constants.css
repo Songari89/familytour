@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -17,8 +16,8 @@
   --selectBgColor: #db6538;
   --mainBtnColor: #db6538;
   --subBtnColor: #185146;
-  --defaultFont: "Kyobo Handwriting 2019","Gaegu",sans-serif;
-  --titleFont: "KCC-Ganpan","Gaegu",sans-serif;
+  --defaultFont: "Kyobo Handwriting 2019",'KyoboHand',sans-serif;
+  --titleFont: "KCC-Ganpan",'Cafe24Ssurround',sans-serif;
 }
 
 :root.mobile {
@@ -69,11 +68,21 @@
   font-family: "Kyobo Handwriting 2019", sans-serif;
   font-weight: 400;
   font-style: normal;
-  scr: url(../fonts/Kyobo Handwriting 2019.woff) format("woff");
+  scr: url(../fonts/Kyobo-Handwriting-2019.woff) format("woff");
 }
 
-@font-face{
-  font-family: "Gaegu", sans-serif;
+@font-face {
+    font-family: 'KyoboHand';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 p , pre {
@@ -82,7 +91,7 @@ p , pre {
 }
 
 pre{
-  font-family: "Kyobo Handwriting 2019", "Gaegu", sans-serif;
+  font-family: "Kyobo Handwriting 2019", 'KyoboHand', sans-serif;
 }
 
 a {
@@ -99,34 +108,30 @@ ul {
 
 /* 섹션 기본 설정 */
 .mobilemode {
-  margin: 0 auto;
-  width: 83vw;
-  height: 70vh;
-  position: absolute;
-  bottom: 2.5rem;
-  left: 65%;
-  transform: translateX(-65%);
-
+  margin: 1rem auto 0 auto;
+  width: 90vw;
+  height: 73%;
+  position: relative;
 }
 
 .deskmode {
-  margin: 0 auto;
-  width: 87vw;
-  height: 70vh;
-  position: absolute;
-  bottom: 3rem;
-  left: 50%;
-  transform: translateX(-50%);
-
+  margin: 1rem auto 0 auto;
+  width: 90vw;
+  height: 73%;
+  position: relative;
 }
 
-.section {
-  width: 100%;
-  height: 100%;
+
+.section{
+  width:92%;
+  height: 95%;
+  position: absolute;
+  top:50%;
+  right:5%;
+  transform:translate(5%,-50%);
   display:flex;
   flex-direction: column;
   align-items:center;
-
 }
 
 .back {
@@ -140,13 +145,13 @@ ul {
 }
 
 .menucontainer {
-  width: 100%;
+  width: 90%;
   margin: 0.5rem 0; 
 }
 
 .menu {
   font-size: 1.4rem;
-  width:4rem;
+  width:5rem;
   text-align: center;
 }
 
@@ -155,7 +160,7 @@ ul {
 }
 
 .line {
-  width: 4rem;
+  width: 5rem;
   display: block;
 }
 

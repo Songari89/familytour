@@ -1,19 +1,14 @@
 import React, { useContext } from "react";
 import styles from "./ConfirmModal.module.css";
 import { ModalContext } from "../context/ModalProvider";
-import { useQueryClient, useMutation} from '@tanstack/react-query'
-import { deletePhoto, removePhoto } from "../apis/firebase";
+import { deletePhoto} from "../apis/firebase";
+import usePhoto from "../hooks/usePhoto";
 
 export default function ConfirmModal() {
   const { isConfirm, data:photo, closeConfirmModal } = useContext(ModalContext);
-    const queryClient = useQueryClient();
-    const removeItem = useMutation({
-      mutationFn: ({ photo }) => removePhoto({ photo }),
-      onSuccess: () => queryClient.invalidateQueries(["photos"]),
-    });
+    const {removeItem} = usePhoto();
 
-      
-
+    
       const handleDelete = ({photo}) => {
         const id = photo.id
         removeItem.mutate({ photo })

@@ -35,13 +35,13 @@ export default function TodoListDetail({userId}) {
   return (
     <>
     <ul className={styles.lists}>
-      {todos && todos.filter(item => checked? item.status === 'done' : item.status === 'active').map((item) => <Todo key={item.id} todo={item} userId={userId}/> )}</ul>
+      {todos && todos.filter(item => checked? item.status === 'done' : item).map((item) => <Todo key={item.id} todo={item} userId={userId}/> )}</ul>
     <div className={styles.formcontainer}>
     {!checked && <AddList userId={userId}/>}
   
     </div>  
     <div className={styles.buttoncontainer}>
-    <button className={styles.checkedbtn} onClick={handleClick}>{checked?"준비할 것!" : "준비 완료!"} </button></div>
+    <button className={styles.checkedbtn} onClick={handleClick}>{checked?"준비할 것!" : "준비 끝난 것들!"} </button></div>
     </>
   );
 }

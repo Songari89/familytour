@@ -3,27 +3,15 @@ import fullheart from '../staticimage/fullheart.svg'
 import heart from '../staticimage/heart.svg';
 import styles from './Like.module.css'
 import { IdContext } from "../context/IdProvider";
-import {useQueryClient, useMutation, useQuery} from '@tanstack/react-query';
-import { addLike, getLike, removeLike } from "../apis/firebase";
 import { ModalContext } from "../context/ModalProvider";
+import useLike from "../hooks/useLike";
 
 export default function Like({placeId}) {
   const {openSelectedModal} = useContext(ModalContext);
   const {id} = useContext(IdContext);
   const [like, setLike] = useState();
   const [selected, setSelected] = useState(false);
-  const queryClient = useQueryClient();
-  const {data: likes} = useQuery({
-    queryKey:['likes', placeId || ""], queryFn:() => getLike({placeId}), enabled: !!id})
-  const addItem = useMutation({
-    mutationFn: ({id, placeId}) => addLike({id, placeId}),
-    onSuccess: () => queryClient.invalidateQueries(["likes", placeId]),
-  });
-  const removeItem = useMutation({
-    mutationFn: ({id, placeId }) => removeLike( {id, placeId }),
-    onSuccess: () => queryClient.invalidateQueries(["likes", placeId]),
-  });
-
+  const {likeQuery:{data: likes}, addItem, removeItem} = useLike({placeId, id})
 
   useEffect(() => {
     if(likes){

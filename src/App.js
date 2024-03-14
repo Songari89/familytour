@@ -10,26 +10,27 @@ import Modal from "./components/Modal";
 import PassWordModal from "./components/PassWordModal";
 import ConfirmModal from "./components/ConfirmModal";
 import SelectedModal from "./components/SelectedModal";
+import BackgroundWrapper from "./components/BackgroundWrapper";
 
 const queryClient = new QueryClient();
 
 function App() {
-  const { viewportmode } = useViewport();
+  const { viewportmode, addressBar} = useViewport();
 
   return (
-    <div className="App">
+    <div className="app" style={{ height: `${addressBar}px` }}>
       <QueryClientProvider client={queryClient}>
         <IdProvider>
           <ModalProvider>
             <Header viewportmode={viewportmode} />
-            <div className={viewportmode ? "mobilemode" : "deskmode"}>
+            <BackgroundWrapper>
               <Outlet />
-            </div>
-            <Background viewportmode={viewportmode} />
-            <Modal/>
-            <PassWordModal/>
-            <ConfirmModal/>
-            <SelectedModal/>
+            </BackgroundWrapper>
+            {/* <Background viewportmode={viewportmode} /> */}
+            <Modal />
+            <PassWordModal />
+            <ConfirmModal />
+            <SelectedModal />
           </ModalProvider>
         </IdProvider>
       </QueryClientProvider>
