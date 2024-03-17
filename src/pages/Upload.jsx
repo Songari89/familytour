@@ -27,9 +27,7 @@ export default function Upload() {
     html2canvas(captureRef.current)
       .then((canvas) => {
         const dataUrl = canvas.toDataURL();
-
         const blob = dataURLtoBlob(dataUrl);
-     
         uploadPhoto({ type: blob, id, mode: "photos" }).then((imageUrl) => {
           addPhoto.mutate(
             { photo, id, imageUrl },

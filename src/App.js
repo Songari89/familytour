@@ -18,7 +18,7 @@ function App() {
   const { viewportmode, addressBar} = useViewport();
 
   return (
-    <div className="app" style={{ height: `${addressBar}px` }}>
+    <div className="app" style={{ "height" : `${addressBar}px` }}>
       <QueryClientProvider client={queryClient}>
         <IdProvider>
           <ModalProvider>

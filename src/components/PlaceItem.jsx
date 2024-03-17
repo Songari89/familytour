@@ -13,7 +13,7 @@ export default function PlaceItem({ list }) {
       <div className={styles.contentscontainer}>
         <div className={styles.titlecontainer}>
           <p>{title}</p>
-          <Like placeId={id} />
+          <Like list={list} />
         </div>
         <div className={styles.textcontainer}>
           <p className={styles.subtitle}>

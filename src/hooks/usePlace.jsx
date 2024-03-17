@@ -1,17 +1,16 @@
-import React from 'react';
-import {useQueryClient, useQuery} from '@tanstack/react-query'
-import { getList } from "../apis/firebase";
 
-export default function usePlace({category}) {
+import {useQueryClient,  useMutation} from '@tanstack/react-query'
+import { updateList } from "../apis/firebase";
+
+export default function usePlace() {
   const queryClient = useQueryClient
-  const placeQuery = useQuery({
-    queryKey: ["list", category],
-    queryFn: () => getList(category),
-    enabled: !!category,
+
+  const updateItem = useMutation({
+    mutationFn: (list) => updateList(list)
+    ,
+    onSuccess: () => queryClient.invalidateQueries(["lists"]),
   });
 
-
-
-  return {placeQuery}
+  return {updateItem}
 }
 

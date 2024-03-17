@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./PhotoItem.module.css";
 import basic from "../staticimage/basic.png";
-import totoro from "../staticimage/totoro 2.png";
-import pooh from "../staticimage/pooh 2.png";
+import totoro from "../staticimage/totoro.png";
+import pooh from "../staticimage/pooh.png";
 
 const filmImage = {
   basic,
   totoro,
   pooh,
-}
+};
 const date = {
   "10May": "2024년 5월 10일",
   "11May": "2024년 5월 11일",

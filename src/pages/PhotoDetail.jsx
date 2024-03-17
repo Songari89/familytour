@@ -23,6 +23,8 @@ export default function PhotoDetail({ date }) {
     return <Error />;
   }
 
+
+
   return (
     <>
       <ul className={styles.lists}>

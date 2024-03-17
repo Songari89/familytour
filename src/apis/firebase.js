@@ -79,8 +79,16 @@ export async function addList({ list, id, imageUrl }) {
     ...list,
     id,
     image: imageUrl,
+    like: 0
   });
 }
+
+export async function updateList(list){
+  const category = list.category;
+  const id = list.id
+  return set(dbRef(database, `lists/${category}/${id}`), list);
+}
+
 
 export async function addLike({ id, placeId }) {
   return set(dbRef(database, `likes/${placeId}/${id}`), id);

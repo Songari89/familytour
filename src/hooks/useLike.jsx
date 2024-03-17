@@ -7,7 +7,6 @@ export default function useLike({placeId, id}) {
     const likeQuery = useQuery({
       queryKey: ["likes", placeId || ""],
       queryFn: () => getLike({ placeId }),
-      enabled: !!id,
     });
     const addItem = useMutation({
       mutationFn: ({ id, placeId }) => addLike({ id, placeId }),

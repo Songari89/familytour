@@ -1,37 +1,40 @@
-import React from 'react';
+import React from "react";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
 import PlaceItem from "../components/PlaceItem";
-import styles from './PlaceDetail.module.css'
-import usePlace from "../hooks/usePlace";
+import styles from "./PlaceDetail.module.css";
+import {useQuery} from '@tanstack/react-query'
+import { getList } from "../apis/firebase";
+
+export default function PlaceDetail({ category }) {
+    const {isLoading, error, data:lists} = useQuery({
+      queryKey: ["lists", category],
+      queryFn: () => getList(category),
+      enabled: !!category,
+    });
+  
 
 
-export default function PlaceDetail({category}) {
-const { placeQuery:{
-  isLoading,
-  error,
-  data: lists,}
-} = usePlace({category})
 
+  if (isLoading) {
+    return <Loading />;
+  }
+  if (error) {
+    return <Error />;
+  }
 
-if (isLoading) {
-  return <Loading />;
+  const sortedLists = lists?.sort((a, b) => b.like - a.like);
+
+  return (
+    <>
+      <ul className={styles.lists}>
+        {sortedLists &&
+          sortedLists.map((list) => (
+            <li key={list.id} className={styles.list}>
+              <PlaceItem list={list} />
+            </li>
+          ))}
+      </ul>
+    </>
+  );
 }
-if (error) {
-  return <Error />;
-}
-
-return (
-  <>
-    <ul className={styles.lists}>
-      {lists &&
-        lists.map((list) => (
-          <li key={list.id} className={styles.list}>
-            <PlaceItem list={list}/>
-          </li>
-        ))}
-    </ul>
-  </>
-);
-}
-
