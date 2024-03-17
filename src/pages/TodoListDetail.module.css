@@ -54,3 +54,9 @@
   margin: 0 auto;
 }
 }
+
+@media(max-width:380px){
+  .checkedbtn{
+    width: 50%;
+  }
+}

@@ -1,7 +1,6 @@
 import "./App.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Header from "./components/Header";
-import Background from "./components/Background";
 import { Outlet } from "react-router-dom";
 import useViewport from "./hooks/useViewport";
 import IdProvider from "./context/IdProvider";
@@ -15,10 +14,10 @@ import BackgroundWrapper from "./components/BackgroundWrapper";
 const queryClient = new QueryClient();
 
 function App() {
-  const { viewportmode, addressBar} = useViewport();
+  const { viewportmode, addressBar } = useViewport();
 
   return (
-    <div className="app" style={{ "height" : `${addressBar}px` }}>
+    <div className="app" style={{ height: `${addressBar}px` }}>
       <QueryClientProvider client={queryClient}>
         <IdProvider>
           <ModalProvider>
@@ -26,7 +25,6 @@ function App() {
             <BackgroundWrapper>
               <Outlet />
             </BackgroundWrapper>
-            {/* <Background viewportmode={viewportmode} /> */}
             <Modal />
             <PassWordModal />
             <ConfirmModal />

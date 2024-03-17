@@ -1,6 +1,35 @@
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bgColor);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+.pageimage{
+  position:fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform:translateX(-50%);
+
+  width: 90%;
+  height: 75vh;
+  z-index: -1;
+}
+
+.elealign{
+  width:90%;
+  display: flex;
+  justify-content:center;
+  align-items:flex-end;
+}
+
+
 .linkcontainer{
   width: 100%;
-  height: 25vh;
+  height: 21vh;
   display:flex;
   justify-content: center;
   align-items: center;
@@ -17,3 +46,8 @@
   border-radius: 2.5rem;
 }
 
+@media(min-width:800px){
+  .elealign{
+      align-items:normal;
+  }
+}

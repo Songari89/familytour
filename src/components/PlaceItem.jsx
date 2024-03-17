@@ -4,7 +4,7 @@ import Like from "./Like";
 import {Link} from 'react-router-dom'
 
 export default function PlaceItem({ list }) {
-  const {id, title, address, addressurl, image, pay, time, description, category} = list;
+  const {title, address, addressurl, image, pay, time, description, category} = list;
   return (
     <div className={styles.container}>
       <div className={styles.imagecontainer}>

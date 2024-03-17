@@ -6,7 +6,7 @@ import mobilebg from "../staticimage/mobilebg.png";
 
 
 export default function BackgroundWrapper({ children }) {
-  const { viewportmode, addressBar } = useViewport();
+  const { viewportmode } = useViewport();
 
   return (
     <>

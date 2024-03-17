@@ -148,12 +148,23 @@
     height: 30px;
   }
 }
-/* 
-@media (max-height: 850px) {
-  .headcontainer {
-    margin: 1.5rem auto 0 auto;
+@media(max-width: 380px){
+  .jianicon{
+    height: 90%;
   }
-} */
+  .headtext{
+    font-size:1rem;
+  }
+  .jian{
+    font-size: 1.1rem;
+  }
+  .nav > a{
+    font-size: 1rem;
+  }
+  .nav >span {
+    font-size: 1rem;
+  }
+}
 
 @media (min-height: 1024px) {
   .headcontainer {
