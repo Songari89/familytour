@@ -82,7 +82,7 @@
   }
 }
 
-@media(max-width: 380px){
+@media(max-width: 390px){
   .titlecontainer > p{
     font-size:1.1rem;
   }
